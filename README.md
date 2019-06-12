@@ -19,9 +19,4 @@ Grocery app
 * multiuser grocery list for families
 * webb app
 
-Third idea based on the input of our shady benefactor
-* seedy? Maybe
-* web scrapper, definititely
-* secrect underground sect
-
 ## 
