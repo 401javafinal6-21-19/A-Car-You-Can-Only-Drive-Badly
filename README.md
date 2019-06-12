@@ -3,7 +3,7 @@
 
 
 ## Problem Domain
-* Control an RC car wireless overbluetooh
+* Control an RC car wireless over bluetooh
 * Manually control the car through bluetooth
 * Crowdsource control of the car through twitch
 
