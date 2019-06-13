@@ -12,5 +12,7 @@
 
 * [Twitch Chat Colored Light Reference](https://github.com/alexkarimov/twitchlights)
 
+* [Twitch Chat tmi.js](https://www.youtube.com/watch?v=AnO2YKBAFc4)
+
 * [RC CAR Reference](https://create.arduino.cc/projecthub/samanfern/bluetooth-controlled-car-d5d9ca)
 
