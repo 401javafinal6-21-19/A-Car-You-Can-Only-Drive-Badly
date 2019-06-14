@@ -3,12 +3,30 @@
  */
 package BadDriving;
 
+
+import com.pi4j.io.gpio.*;
+
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
+    public void doThing() throws InterruptedException {
+        final GpioController gpio = GpioFactory.getInstance();
+
+        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PinLED", PinState.HIGH);
+        System.out.println("light is: on");
+
+        Thread.sleep(2000);
+
+        pin.low();
+        System.out.println("light is: off");
+
+        Thread.sleep(2000);
+
+        System.out.println("light is: on for 1s");
+        pin.pulse(1000, true);
+
+        gpio.shutdown();
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args) throws InterruptedException {
+        new App().doThing();
     }
 }

@@ -28,7 +28,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     // Use pi4j for pi hardware implementation
-    compile 'com.pi4j:pi4j-parent:1.2'
+    compile 'com.pi4j:pi4j-core:1.2'
 }
 
 // Define the main class for the application
