@@ -1,5 +1,3 @@
-'use strict';
-
 // resource: https://github.com/Mariacristina88/Snake-game
 
 var drawModule = (function () {
@@ -10,8 +8,8 @@ var drawModule = (function () {
     context.strokeStyle = 'blue';
     context.strokeRect(x * snakeSize, y * snakeSize, snakeSize, snakeSize);
   }
-  var food = function(x, y) {
-    context.fillStyle = 'red';
+  var apple = function(x, y) {
+    context.fillStyle = 'light-green';
     context.fillRect(x * snakeSize, y * snakeSize, snakeSize, snakeSize);
     
     context.fillStyle = 'green';
@@ -30,7 +28,7 @@ var drawModule = (function () {
     }
   } 
   var paint = function() {
-    context.fillStyle = 'black';
+    context.fillStyle = 'lightgray';
     context.fillRect(0, 0, width, height);
     context.strokeStyle = 'grey';
     context.strokeRect(0, 0, width, height);
@@ -68,7 +66,7 @@ var drawModule = (function () {
     for (var i = 0; i < snake.length; i++) {
       bodySnake(snake[i].x, snake[i].y);
     }
-    food(food.x, food.y);
+    apple(food.x, food.y);
     scoreText();
   }
   var createFood = function() {

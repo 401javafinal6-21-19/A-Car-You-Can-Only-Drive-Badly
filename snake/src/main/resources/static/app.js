@@ -1,6 +1,9 @@
-'use strict';
-
 (function(window, document, drawModule){
+  var btn = document.getElementById('btn');
+  btn.addEventListener('click', function(){ 
+    drawModule.init();
+  })
+
   document.onkeydown = function(event){
     keyCode = window.event.keyCode;
     keyCode = event.keyCode;
