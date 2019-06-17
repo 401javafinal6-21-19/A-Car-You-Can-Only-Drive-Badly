@@ -125,19 +125,19 @@ public class App {
     public static void stop() throws InterruptedException{
 
         if(WheelOne.firstWheel.isHigh()){
-            WheelOne.onButtonPress();
+            WheelOne.firstWheel.toggle();
         }
 
         if(WheelTwo.seccondWheel.isHigh()){
-            WheelTwo.onButtonPress();
+            WheelTwo.seccondWheel.toggle();
         }
 
         if(WheelThree.thirdWheel.isHigh()){
-            WheelThree.onButtonPress();
+            WheelThree.thirdWheel.toggle();
         }
 
         if(WheelFour.fourthWheel.isHigh()){
-            WheelFour.onButtonPress();
+            WheelFour.fourthWheel.toggle();
         }
 
        /* WheelOne.firstWheel.low();
