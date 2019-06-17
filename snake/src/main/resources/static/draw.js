@@ -21,10 +21,10 @@ var drawModule = (function () {
     context.fillText(score_text, 145, height - 5);
   }
   var drawSnake = function() {
-    var length = 4;
+    var length = 5;
     snake = [];
     for (var i = length -1; i >= 0; i--) {
-      snake.push({x: i, y: 0});
+      snake.push({x: i, y: 30});
     }
   } 
   var paint = function() {
@@ -87,10 +87,9 @@ var drawModule = (function () {
     for (var i = 0; i < array.length; i++) {
       if (array[i].x === x && array[i].y === y) {
         return true;
-      } else {
-        return false;
       }
     }
+    return false;
   }
   var init = function() {
     direction = 'right';
