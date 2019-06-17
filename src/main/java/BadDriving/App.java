@@ -123,8 +123,10 @@ public class App {
     }
 
     public static void stop() throws InterruptedException{
+        System.out.println("In stop");
 
         if(WheelOne.firstWheel.isHigh()){
+            System.out.println("In first wheel toggle if statement");
             WheelOne.firstWheel.toggle();
         }
 
