@@ -8,9 +8,9 @@ import com.pi4j.io.gpio.*;
 import com.pi4j.io.*;
 
 public class App {
-    public GpioController gpio = GpioFactory.getInstance();
 
-    public  void main(String[] args) throws InterruptedException {
+
+    public static void main(String[] args) throws InterruptedException {
 
         App.wheelThree();
 
@@ -20,7 +20,8 @@ public class App {
     }
 
 
-    public  void wheelOne()throws InterruptedException{
+    public static void wheelOne()throws InterruptedException{
+        final GpioController gpio = GpioFactory.getInstance();
 
         final GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "PinWheel1", PinState.HIGH);
 
@@ -29,8 +30,9 @@ public class App {
 
     }
 
-    public  void wheelTwo() throws InterruptedException{
+    public static void wheelTwo() throws InterruptedException{
 
+        final GpioController gpio = GpioFactory.getInstance();
         final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "PinWheel2", PinState.HIGH);
 
         System.out.println("Seccond Switch");
@@ -40,7 +42,8 @@ public class App {
 
     }
 
-    public  void wheelThree() throws InterruptedException{
+    public static void wheelThree() throws InterruptedException{
+        final GpioController gpio = GpioFactory.getInstance();
 
         final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "PinWheel3", PinState.HIGH);
 
@@ -51,7 +54,9 @@ public class App {
 
     }
 
-    public  void wheelFour() throws InterruptedException{
+    public static void wheelFour() throws InterruptedException{
+        final GpioController gpio = GpioFactory.getInstance();
+
         final GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "PinWheel4", PinState.HIGH);
 
         System.out.println("Fourth Switch");
