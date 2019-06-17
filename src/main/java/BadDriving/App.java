@@ -10,8 +10,32 @@ import com.pi4j.io.*;
 public class App {
     public void doThing() throws InterruptedException {
         final GpioController gpio = GpioFactory.getInstance();
+        final GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PinWheel1", PinState.HIGH);
+        final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "PinWheel2", PinState.HIGH);
+        final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "PinWheel3", PinState.HIGH);
+        final GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "PinWheel4", PinState.HIGH);
 
-        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PinLED", PinState.HIGH);
+        Thread.sleep(2000);
+
+        System.out.println("First Switch");
+        firstWheel.pulse(60000, true);
+
+        System.out.println("Seccond Switch");
+        seccondWheel.pulse(60000, true);
+
+        System.out.println("Third Switch");
+        thirdWheel.pulse(60000, true);
+
+        System.out.println("Fourth Switch");
+        fourthWheel.pulse(60000, true);
+
+        System.out.println("ALL SPEED AHEAD");
+        firstWheel.pulse(60000, true);
+        seccondWheel.pulse(60000, true);
+        thirdWheel.pulse(60000, true);
+        fourthWheel.pulse(60000, true);
+
+        /*final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PinLED", PinState.HIGH);
         System.out.println("light is: on");
 
         Thread.sleep(2000);
@@ -22,34 +46,8 @@ public class App {
         Thread.sleep(2000);
 
         System.out.println("light is: on for 1s");
-        pin.pulse(1000, true);
-
-
-        final GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PinWheel1", PinState.HIGH);
-        final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "PinWheel2", PinState.HIGH);
-        final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "PinWheel3", PinState.HIGH);
-        final GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "PinWheel4", PinState.HIGH);
-
-        Thread.sleep(2000);
-
-        System.out.println("First Switch");
-        firstWheel.pulse(60000);
-
-        System.out.println("Seccond Switch");
-        seccondWheel.pulse(60000);
-
-        System.out.println("Third Switch");
-        thirdWheel.pulse(60000);
-
-        System.out.println("Fourth Switch");
-        fourthWheel.pulse(60000);
-
-        System.out.println("ALL SPEED AHEAD");
-        firstWheel.pulse(60000);
-        seccondWheel.pulse(60000);
-        thirdWheel.pulse(60000);
-        fourthWheel.pulse(60000);
-
+        pin.pulse(1000, true);*/
+        
         gpio.shutdown();
     }
 
