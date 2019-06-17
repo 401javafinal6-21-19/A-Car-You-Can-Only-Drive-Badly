@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../classDemos/day2" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../codefellowship" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../data-structures-and-algorithms-401/Linked_list" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../data-structures-and-algorithms-401/challenges/BinarySearch" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../data-structures-and-algorithms-401/challenges/array_shift" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../healthTracker-backend" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../java-fundamentals/basiclibrary" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../java-fundamentals/inheritance" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../midterm/trivia-machine" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../songr" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-1680" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560792099075" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+</project>
