@@ -17,22 +17,19 @@ public class App {
 
         WheelOne.onButtonPress();
         Thread.sleep(400);
+        WheelOne.onButtonPress();
 
-
-       /* WheelTwo.onButtonPress();
+        WheelTwo.onButtonPress();
         Thread.sleep(400);
-        WheelTwo.Stop();
+        WheelTwo.onButtonPress();
 
         WheelThree.onButtonPress();
         Thread.sleep(400);
-        WheelThree.Stop();
+        WheelThree.onButtonPress();
 
         WheelFour.onButtonPress();
         Thread.sleep(400);
-        WheelFour.Stop();
-
-        gpio.shutdown();
-*/
+        WheelFour.onButtonPress();
 
     }
 
@@ -42,10 +39,7 @@ public class App {
         final static GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "PinWheel1", HIGH);
 
         public static void onButtonPress() throws InterruptedException{
-            firstWheel.high();
-            Thread.sleep(400);
-            firstWheel.low();
-            gpio.shutdown();
+            firstWheel.toggle();
 
         }
 
@@ -64,7 +58,7 @@ public class App {
 
         public static void onButtonPress(){
 
-            seccondWheel.high();
+            seccondWheel.toggle();
         }
 
 
@@ -81,7 +75,7 @@ public class App {
 
         public static void onButtonPress() throws InterruptedException{
 
-            thirdWheel.high();
+            thirdWheel.toggle();
 
         }
 
@@ -100,7 +94,7 @@ public class App {
 
         public static void onButtonPress() throws InterruptedException{
 
-            fourthWheel.high();
+            fourthWheel.toggle();
         }
 
         public static void Stop() throws InterruptedException{
