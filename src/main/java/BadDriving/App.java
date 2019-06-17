@@ -28,7 +28,7 @@ public class App {
        Thread.sleep(600);
 
        stop();
-       
+
        gpio.shutdown();
 
     }
@@ -100,7 +100,7 @@ public class App {
     }
 
     public static void forward() throws InterruptedException{
-        if(WheelOne.gpio.isLow()){
+        /*if(WheelOne.gpio.isLow()){
             WheelOne.onButtonPress();
         }
 
@@ -114,12 +114,17 @@ public class App {
 
         if(WheelFour.gpio.isLow()){
             WheelFour.onButtonPress();
-        }
+        }*/
+
+        WheelOne.firstWheel.high();
+        WheelTwo.seccondWheel.high();
+        WheelThree.thirdWheel.high();
+        WheelFour.fourthWheel.high();
     }
 
     public static void stop() throws InterruptedException{
 
-        if(WheelOne.gpio.isHigh()){
+        /*if(WheelOne.gpio.isHigh()){
             WheelOne.onButtonPress();
         }
 
@@ -133,7 +138,12 @@ public class App {
 
         if(WheelFour.gpio.isHigh()){
             WheelFour.onButtonPress();
-        }
+        }*/
+
+        WheelOne.firstWheel.low();
+        WheelTwo.seccondWheel.low();
+        WheelThree.thirdWheel.low();
+        WheelFour.fourthWheel.low();
     }
 
 
