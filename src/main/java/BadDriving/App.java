@@ -18,9 +18,8 @@ public class App {
         WheelOne.onButtonPress();
         Thread.sleep(400);
 
-        WheelOne.Stop();
 
-        WheelTwo.onButtonPress();
+       /* WheelTwo.onButtonPress();
         Thread.sleep(400);
         WheelTwo.Stop();
 
@@ -33,7 +32,7 @@ public class App {
         WheelFour.Stop();
 
         gpio.shutdown();
-
+*/
 
     }
 
@@ -44,13 +43,15 @@ public class App {
 
         public static void onButtonPress() throws InterruptedException{
             firstWheel.high();
-
+            Thread.sleep(400);
+            firstWheel.low();
+            gpio.shutdown();
 
         }
 
         public static void Stop() throws InterruptedException{
 
-            firstWheel.low();
+
 
         }
 
