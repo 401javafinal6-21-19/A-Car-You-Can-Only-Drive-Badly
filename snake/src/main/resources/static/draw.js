@@ -24,7 +24,10 @@ var drawModule = (function () {
     var length = 5;
     snake = [];
     for (var i = length -1; i >= 0; i--) {
-      snake.push({x: i, y: 30});
+      snake.push({
+        x: i,
+        y: 30
+      });
     }
   } 
   var paint = function() {
@@ -45,7 +48,20 @@ var drawModule = (function () {
       snakey++;
     }
     // change w/ donut. this is how you lose
-    if (snakex == -1 || snakex == width/snakeSize || snakey == -1 || snakey == height/snakeSize || checkCollision(snakex, snakey, snake)) {
+    if (snakex == -1) {
+      snakex = width / snakeSize - 1
+      console.log('pass left')
+    }
+    if (snakex == width / snakeSize) {
+      snakex = 1
+    }
+    if (snakey == -1) {
+      snakey = height / snakeSize - 1;
+    }
+    if (snakey == height / snakeSize) {
+      snakey = 1;
+    }
+    if (checkCollision(snakex, snakey, snake)) {
       context.clearRect(0, 0, width, height);
       gameLoop = clearInterval(gameLoop);
       return;
