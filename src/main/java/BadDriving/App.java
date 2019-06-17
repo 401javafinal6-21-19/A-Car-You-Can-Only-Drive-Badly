@@ -8,7 +8,7 @@ import com.pi4j.io.gpio.*;
 import com.pi4j.io.*;
 
 public class App {
-    final GpioController gpio = GpioFactory.getInstance();
+    public GpioController gpio = GpioFactory.getInstance();
 
     public static void main(String[] args) throws InterruptedException {
 
