@@ -51,7 +51,7 @@ public class App {
 
     }
 
-    public static void wheelFour() throws InterruptedException{
+    public  void wheelFour() throws InterruptedException{
         final GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "PinWheel4", PinState.HIGH);
 
         System.out.println("Fourth Switch");
