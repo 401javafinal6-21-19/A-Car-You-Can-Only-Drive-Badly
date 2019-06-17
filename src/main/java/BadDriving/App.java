@@ -25,9 +25,9 @@ public class App {
 
 
 
-        final GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_22, "PinWheel1", PinState.HIGH);
-        final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_18, "PinWheel2", PinState.HIGH);
-        final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, "PinWheel3", PinState.HIGH);
+        final GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_8, "PinWheel1", PinState.HIGH);
+        final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_10, "PinWheel2", PinState.HIGH);
+        final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_11, "PinWheel3", PinState.HIGH);
         final GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_12, "PinWheel4", PinState.HIGH);
 
         Thread.sleep(2000);
