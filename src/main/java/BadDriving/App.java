@@ -21,8 +21,14 @@ public class App {
 
        turnRight();
 
+       Thread.sleep(600);
 
+       forward();
 
+       Thread.sleep(600);
+
+       stop();
+       
        gpio.shutdown();
 
     }
