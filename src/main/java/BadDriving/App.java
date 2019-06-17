@@ -127,18 +127,22 @@ public class App {
 
         /*if(WheelOne.firstWheel.isHigh()){
             System.out.println("In first wheel toggle if statement");*/
+            WheelOne.firstWheel.high();
             WheelOne.firstWheel.toggle();
        /* }*/
 
         /*if(WheelTwo.seccondWheel.isHigh()){*/
+            WheelTwo.seccondWheel.high();
             WheelTwo.seccondWheel.toggle();
        /* }*/
 
         /*if(WheelThree.thirdWheel.isHigh()){*/
+            WheelThree.thirdWheel.high();
             WheelThree.thirdWheel.toggle();
        /* }*/
 
        /* if(WheelFour.fourthWheel.isHigh()){*/
+            WheelFour.fourthWheel.high();
             WheelFour.fourthWheel.toggle();
        /* }*/
 
