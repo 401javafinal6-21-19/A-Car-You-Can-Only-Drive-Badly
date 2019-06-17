@@ -5,6 +5,7 @@ package BadDriving;
 
 
 import com.pi4j.io.gpio.*;
+import com.pi4j.io.*;
 
 public class App {
     public void doThing() throws InterruptedException {
@@ -24,11 +25,10 @@ public class App {
         pin.pulse(1000, true);
 
 
-
-        final GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_8, "PinWheel1", PinState.HIGH);
-        final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_10, "PinWheel2", PinState.HIGH);
-        final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_11, "PinWheel3", PinState.HIGH);
-        final GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_12, "PinWheel4", PinState.HIGH);
+        final GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, "PinWheel1", PinState.HIGH);
+        final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03, "PinWheel2", PinState.HIGH);
+        final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "PinWheel3", PinState.HIGH);
+        final GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_17, "PinWheel4", PinState.HIGH);
 
         Thread.sleep(2000);
 
