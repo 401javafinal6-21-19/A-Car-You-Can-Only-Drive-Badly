@@ -15,21 +15,13 @@ public class App {
     public static void main(String[] args) throws InterruptedException {
         final GpioController gpio = GpioFactory.getInstance();
 
-        WheelOne.onButtonPress();
-        Thread.sleep(400);
-        WheelOne.onButtonPress();
+       turnLeft();
 
-        WheelTwo.onButtonPress();
-        Thread.sleep(400);
-        WheelTwo.onButtonPress();
+       Thread.sleep(600);
 
-        WheelThree.onButtonPress();
-        Thread.sleep(400);
-        WheelThree.onButtonPress();
+       turnRight();
 
-        WheelFour.onButtonPress();
-        Thread.sleep(400);
-        WheelFour.onButtonPress();
+       gpio.shutdown();
 
     }
 
@@ -43,11 +35,6 @@ public class App {
 
         }
 
-        public static void Stop() throws InterruptedException{
-
-
-
-        }
 
     }
 
@@ -61,12 +48,6 @@ public class App {
             seccondWheel.toggle();
         }
 
-
-        public static void Stop() throws InterruptedException{
-
-            seccondWheel.low();
-
-        }
     }
 
     public static class WheelThree{
@@ -79,11 +60,6 @@ public class App {
 
         }
 
-        public static void Stop() throws InterruptedException{
-
-            thirdWheel.low();
-
-        }
 
     }
 
@@ -93,16 +69,27 @@ public class App {
 
 
         public static void onButtonPress() throws InterruptedException{
-
             fourthWheel.toggle();
         }
 
-        public static void Stop() throws InterruptedException{
-
-            fourthWheel.low();
-
-        }
 
     }
+
+    public static void turnLeft() throws InterruptedException{
+        WheelFour.fourthWheel.high();
+        WheelThree.thirdWheel.high();
+
+        WheelOne.firstWheel.low();
+        WheelTwo.seccondWheel.low();
+    }
+
+    public static void turnRight() throws InterruptedException{
+        WheelOne.firstWheel.high();
+        WheelTwo.seccondWheel.high();
+
+        WheelFour.fourthWheel.low();
+        WheelThree.thirdWheel.low();
+    }
+            
 }
 
