@@ -125,22 +125,22 @@ public class App {
     public static void stop() throws InterruptedException{
         System.out.println("In stop");
 
-        if(WheelOne.firstWheel.isHigh()){
-            System.out.println("In first wheel toggle if statement");
+        /*if(WheelOne.firstWheel.isHigh()){
+            System.out.println("In first wheel toggle if statement");*/
             WheelOne.firstWheel.toggle();
-        }
+       /* }*/
 
-        if(WheelTwo.seccondWheel.isHigh()){
+        /*if(WheelTwo.seccondWheel.isHigh()){*/
             WheelTwo.seccondWheel.toggle();
-        }
+       /* }*/
 
-        if(WheelThree.thirdWheel.isHigh()){
+        /*if(WheelThree.thirdWheel.isHigh()){*/
             WheelThree.thirdWheel.toggle();
-        }
+       /* }*/
 
-        if(WheelFour.fourthWheel.isHigh()){
+       /* if(WheelFour.fourthWheel.isHigh()){*/
             WheelFour.fourthWheel.toggle();
-        }
+       /* }*/
 
        /* WheelOne.firstWheel.low();
         WheelTwo.seccondWheel.low();
