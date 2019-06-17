@@ -124,26 +124,26 @@ public class App {
 
     public static void stop() throws InterruptedException{
 
-        /*if(WheelOne.gpio.isHigh()){
+        if(WheelOne.firstWheel.isHigh()){
             WheelOne.onButtonPress();
         }
 
-        if(WheelTwo.gpio.isHigh()){
+        if(WheelTwo.seccondWheel.isHigh()){
             WheelTwo.onButtonPress();
         }
 
-        if(WheelThree.gpio.isHigh()){
+        if(WheelThree.thirdWheel.isHigh()){
             WheelThree.onButtonPress();
         }
 
-        if(WheelFour.gpio.isHigh()){
+        if(WheelFour.fourthWheel.isHigh()){
             WheelFour.onButtonPress();
-        }*/
+        }
 
-        WheelOne.firstWheel.low();
+       /* WheelOne.firstWheel.low();
         WheelTwo.seccondWheel.low();
         WheelThree.thirdWheel.low();
-        WheelFour.fourthWheel.low();
+        WheelFour.fourthWheel.low();*/
     }
 
 
