@@ -27,8 +27,6 @@ public class App {
         System.out.println("First Switch");
 
 
-
-        gpio.shutdown();
     }
 
     public static void wheelTwo() throws InterruptedException{
@@ -39,7 +37,7 @@ public class App {
 
         seccondWheel.pulse(60000, true);
 
-        gpio.shutdown();
+
     }
 
     public static void wheelThree() throws InterruptedException{
@@ -50,7 +48,7 @@ public class App {
 
         thirdWheel.pulse(60000, true);
 
-        gpio.shutdown();
+
     }
 
     public static void wheelFour() throws InterruptedException{
@@ -60,7 +58,7 @@ public class App {
 
         fourthWheel.pulse(60000, true);
 
-        gpio.shutdown();
+      
     }
 }
 
