@@ -10,7 +10,7 @@ import com.pi4j.io.*;
 public class App {
     public GpioController gpio = GpioFactory.getInstance();
 
-    public static void main(String[] args) throws InterruptedException {
+    public  void main(String[] args) throws InterruptedException {
 
         App.wheelThree();
 
@@ -20,7 +20,7 @@ public class App {
     }
 
 
-    public static void wheelOne()throws InterruptedException{
+    public  void wheelOne()throws InterruptedException{
 
         final GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "PinWheel1", PinState.HIGH);
 
@@ -29,7 +29,7 @@ public class App {
 
     }
 
-    public static void wheelTwo() throws InterruptedException{
+    public  void wheelTwo() throws InterruptedException{
 
         final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "PinWheel2", PinState.HIGH);
 
@@ -40,7 +40,7 @@ public class App {
 
     }
 
-    public static void wheelThree() throws InterruptedException{
+    public  void wheelThree() throws InterruptedException{
 
         final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "PinWheel3", PinState.HIGH);
 
@@ -58,7 +58,7 @@ public class App {
 
         fourthWheel.pulse(60000, true);
 
-      
+
     }
 }
 
