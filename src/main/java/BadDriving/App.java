@@ -21,6 +21,8 @@ public class App {
 
        turnRight();
 
+
+
        gpio.shutdown();
 
     }
@@ -90,6 +92,44 @@ public class App {
         WheelFour.fourthWheel.low();
         WheelThree.thirdWheel.low();
     }
-            
+
+    public static void forward() throws InterruptedException{
+        if(WheelOne.gpio.isLow()){
+            WheelOne.onButtonPress();
+        }
+
+        if(WheelTwo.gpio.isLow()){
+            WheelTwo.onButtonPress();
+        }
+
+        if(WheelThree.gpio.isLow()){
+            WheelThree.onButtonPress();
+        }
+
+        if(WheelFour.gpio.isLow()){
+            WheelFour.onButtonPress();
+        }
+    }
+
+    public static void stop() throws InterruptedException{
+
+        if(WheelOne.gpio.isHigh()){
+            WheelOne.onButtonPress();
+        }
+
+        if(WheelTwo.gpio.isHigh()){
+            WheelTwo.onButtonPress();
+        }
+
+        if(WheelThree.gpio.isHigh()){
+            WheelThree.onButtonPress();
+        }
+
+        if(WheelFour.gpio.isHigh()){
+            WheelFour.onButtonPress();
+        }
+    }
+
+
 }
 
