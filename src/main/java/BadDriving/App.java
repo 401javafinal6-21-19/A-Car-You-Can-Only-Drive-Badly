@@ -8,50 +8,64 @@ import com.pi4j.io.gpio.*;
 import com.pi4j.io.*;
 
 public class App {
-    public void doThing() throws InterruptedException {
+
+
+    public static void main(String[] args) throws InterruptedException {
+        new App.wheelOne();
+
+        App.wheelTwo();
+
+        App.wheelThree();
+
+        App.wheelFour();
+
+        System.out.println("Done");
+    }
+
+
+    public static void wheelOne()throws Interrupted Exception{
         final GpioController gpio = GpioFactory.getInstance();
         final GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PinWheel1", PinState.HIGH);
-        final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "PinWheel2", PinState.HIGH);
-        final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "PinWheel3", PinState.HIGH);
-        final GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "PinWheel4", PinState.HIGH);
-
-        Thread.sleep(2000);
 
         System.out.println("First Switch");
+
         firstWheel.pulse(60000, true);
 
-        System.out.println("Seccond Switch");
-        seccondWheel.pulse(60000, true);
-
-        System.out.println("Third Switch");
-        thirdWheel.pulse(60000, true);
-
-        System.out.println("Fourth Switch");
-        fourthWheel.pulse(60000, true);
-
-        System.out.println("ALL SPEED AHEAD");
-        firstWheel.pulse(60000, true);
-        seccondWheel.pulse(60000, true);
-        thirdWheel.pulse(60000, true);
-        fourthWheel.pulse(60000, true);
-
-        /*final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PinLED", PinState.HIGH);
-        System.out.println("light is: on");
-
-        Thread.sleep(2000);
-
-        pin.low();
-        System.out.println("light is: off");
-
-        Thread.sleep(2000);
-
-        System.out.println("light is: on for 1s");
-        pin.pulse(1000, true);*/
-        
         gpio.shutdown();
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        new App().doThing();
+    public static void wheelTwo() throws Interrupted Exception{
+        final GpioController gpio = GpioFactor.getInstance();
+        final GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "PinWheel2", PinState.HIGH);
+
+        System.out.println("Seccond Switch");
+
+        seccondWheel.pulse(60000, true);
+
+        gpio.shutdown();
+    }
+
+    public static void wheelThree() throws Interrupted Exception{
+        final GpioController gpio = GpioFactor.getInstance();
+        final GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "PinWheel3", PinState.HIGH);
+
+        System.out.println("Third Switch");
+
+        thirdWheel.pulse(60000, true);
+
+        gpio.shutdown();
+    }
+
+    public static void wheelFour() throws Interrupted Exception{
+        final GpioController gpio = GpioFactor.getInstance();
+        final GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "PinWheel4", PinState.HIGH);
+
+        System.out.println("Fourth Switch");
+
+        fourthWheel.pulse(60000, true);
+
+        gpio.shutdown();
     }
 }
+
+
