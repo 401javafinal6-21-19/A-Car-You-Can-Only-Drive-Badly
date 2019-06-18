@@ -4,14 +4,15 @@ import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPin;
 import com.pi4j.io.gpio.GpioPinDigital;
+import com.pi4j.io.gpio.GpioPinDigitalInput;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
-import com.pi4j.wiringpi.Gpio;
+import static com.sun.nio.file.SensitivityWatchEventModifier.HIGH;
 
 
 public class Car {
-    final private GpioController gpio;
+    static final private GpioController gpio;
     final private GpioPinDigitalOutput thrustPin26;
     final private GpioPinDigitalOutput thrustPin27;
     final private GpioPinDigitalOutput thrustPin28;
@@ -54,6 +55,7 @@ public class Car {
         Reciever r = new Reciever();
         switch (r.direction){
             case "forward":
+                forward();
 
                 break;
             case "stop":
@@ -73,5 +75,15 @@ public class Car {
             //do the logic for that movement.
     }
 //    Might need to to this for each  movement direction
+
+    public void forward() throws InterruptedException {
+
+        GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "PinWheel1", HIGH);
+        GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "PinWheel2", HIGH);
+        GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "PinWheel3", HIGH);
+        GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "PinWheel4", HIGH);
+
+
+    }
 
 }
