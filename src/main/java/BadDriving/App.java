@@ -43,11 +43,11 @@ public class App {
             forwardButtonUp();
 
             Thread.sleep(600);
-while (true){
+
             stop();
 
-//          gpio.shutdown();
-        }
+            gpio.shutdown();
+
     }
 
 
