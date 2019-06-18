@@ -7,8 +7,8 @@ import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.wiringpi.Gpio;
 
 public class Car {
-    final private GpioController gpio;
-    final private GpioPinDigitalOutput thrustPin26;
+//    final private GpioController gpio;
+//    final private GpioPinDigitalOutput thrustPin26;
 
 
 }
