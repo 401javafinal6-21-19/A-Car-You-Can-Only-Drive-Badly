@@ -7,6 +7,7 @@ import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.RaspiPin;
+import com.pi4j.wiringpi.Gpio;
 import static com.pi4j.io.gpio.PinState.*;
 
 
@@ -43,11 +44,11 @@ public class App {
             forwardButtonUp();
 
             Thread.sleep(600);
-while (true){
+
             stop();
 
-//          gpio.shutdown();
-        }
+          gpio.shutdown();
+
     }
 
 
@@ -153,13 +154,12 @@ while (true){
 
         WheelFour.fourthWheel.high();
         WheelFour.fourthWheel.toggle();
-        System.out.println("just hit the stop method");
 //        WheelOne.firstWheel.low();
 //        WheelTwo.seccondWheel.low();
 //        WheelThree.thirdWheel.low();
 //        WheelFour.fourthWheel.low();
-
     }
+
 
 }
 
