@@ -9,40 +9,45 @@ import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.RaspiPin;
 import static com.pi4j.io.gpio.PinState.*;
 
+
+
 public class App {
+
 
 
     public static void main(String[] args) throws InterruptedException {
         final GpioController gpio = GpioFactory.getInstance();
 
-       turnLeftButtonDown();
 
-       Thread.sleep(600);
 
-      turnLeftButtonUp();
+            turnLeftButtonDown();
 
-       Thread.sleep(600);
+            Thread.sleep(600);
 
-       turnRightButtonDown();
+            turnLeftButtonUp();
 
-       Thread.sleep(600);
+            Thread.sleep(600);
 
-       turnRightButtonUp();
+            turnRightButtonDown();
 
-       Thread.sleep(600);
+            Thread.sleep(600);
 
-       forwardButtonDown();
+            turnRightButtonUp();
 
-       Thread.sleep(600);
+            Thread.sleep(600);
 
-       forwardButtonUp();
+            forwardButtonDown();
 
-       Thread.sleep(600);
+            Thread.sleep(600);
 
-       stop();
+            forwardButtonUp();
 
-//       gpio.shutdown();
+            Thread.sleep(600);
+while (true){
+            stop();
 
+//          gpio.shutdown();
+        }
     }
 
 
