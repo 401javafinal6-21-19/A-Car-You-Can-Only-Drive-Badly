@@ -48,8 +48,10 @@ public class App {
 
             Thread.sleep(10000);
 
-            gpio.shutdown();
-
+            WheelOne.firstWheel.setState(false);
+            WheelTwo.seccondWheel.setState(false);
+            WheelThree.thirdWheel.setState(false);
+           WheelFour.fourthWheel.setState(false);
     }
 
 
