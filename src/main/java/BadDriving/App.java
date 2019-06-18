@@ -138,6 +138,7 @@ public class App {
     public static void stop() throws InterruptedException{
         WheelOne.firstWheel.high();
         WheelOne.firstWheel.toggle();
+        WheelOne.firstWheel.low();
 
         WheelTwo.seccondWheel.high();
         WheelTwo.seccondWheel.toggle();
