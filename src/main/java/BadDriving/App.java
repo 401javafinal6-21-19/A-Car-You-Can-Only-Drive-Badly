@@ -136,22 +136,23 @@ public class App {
 
 
     public static void stop() throws InterruptedException{
-//        WheelOne.firstWheel.high();
-//        WheelOne.firstWheel.toggle();
-//
-//        WheelTwo.seccondWheel.high();
-//        WheelTwo.seccondWheel.toggle();
-//
-//        WheelThree.thirdWheel.high();
-//        WheelThree.thirdWheel.toggle();
-//
-//        WheelFour.fourthWheel.high();
-//        WheelFour.fourthWheel.toggle();
+        
+        WheelOne.firstWheel.high();
+        WheelOne.firstWheel.toggle();
+
+        WheelTwo.seccondWheel.high();
+        WheelTwo.seccondWheel.toggle();
+
+        WheelThree.thirdWheel.high();
+        WheelThree.thirdWheel.toggle();
+
+        WheelFour.fourthWheel.high();
+        WheelFour.fourthWheel.toggle();
         System.out.println("just hit the stop method");
-        WheelOne.firstWheel.low();
-        WheelTwo.seccondWheel.low();
-        WheelThree.thirdWheel.low();
-        WheelFour.fourthWheel.low();
+//        WheelOne.firstWheel.low();
+//        WheelTwo.seccondWheel.low();
+//        WheelThree.thirdWheel.low();
+//        WheelFour.fourthWheel.low();
 
     }
 
