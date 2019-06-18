@@ -154,11 +154,16 @@ public class App {
 //
 //        WheelFour.fourthWheel.high();
 //        WheelFour.fourthWheel.toggle();
-        System.out.println("just hit the stop method");
+        /*System.out.println("just hit the stop method");
         WheelOne.firstWheel.low();
         WheelTwo.seccondWheel.low();
         WheelThree.thirdWheel.low();
-        WheelFour.fourthWheel.low();
+        WheelFour.fourthWheel.low();*/
+
+        WheelOne.firstWheel.setState(false);
+        WheelTwo.seccondWheel.setState(false);
+        WheelThree.thirdWheel.setState(false);
+        WheelFour.fourthWheel.setState(false);
 
     }
 
