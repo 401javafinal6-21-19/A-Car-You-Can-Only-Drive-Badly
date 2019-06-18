@@ -80,7 +80,6 @@ public class App {
 
         }
 
-
     }
 
     public static class WheelFour{
@@ -91,7 +90,6 @@ public class App {
         public static void onButtonPress() throws InterruptedException{
             fourthWheel.toggle();
         }
-
 
     }
 
@@ -138,15 +136,24 @@ public class App {
 
 
     public static void stop() throws InterruptedException{
-        WheelOne.firstWheel.low();
-        WheelTwo.seccondWheel.low();
-        WheelThree.thirdWheel.low();
-        WheelFour.fourthWheel.low();
+        WheelOne.firstWheel.high();
+        WheelOne.firstWheel.toggle();
+
+        WheelTwo.seccondWheel.high();
+        WheelTwo.seccondWheel.toggle();
+
+        WheelThree.thirdWheel.high();
+        WheelThree.thirdWheel.toggle();
+
+        WheelFour.fourthWheel.high();
+        WheelFour.fourthWheel.toggle();
+        
+//        WheelOne.firstWheel.low();
+//        WheelTwo.seccondWheel.low();
+//        WheelThree.thirdWheel.low();
+//        WheelFour.fourthWheel.low();
 
     }
-
-
-
 
 }
 
