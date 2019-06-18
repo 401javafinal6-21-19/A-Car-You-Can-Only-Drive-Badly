@@ -41,7 +41,7 @@ public class App {
 
        stop();
 
-       gpio.shutdown();
+//       gpio.shutdown();
 
     }
 
@@ -147,7 +147,7 @@ public class App {
 
         WheelFour.fourthWheel.high();
         WheelFour.fourthWheel.toggle();
-        
+
 //        WheelOne.firstWheel.low();
 //        WheelTwo.seccondWheel.low();
 //        WheelThree.thirdWheel.low();
