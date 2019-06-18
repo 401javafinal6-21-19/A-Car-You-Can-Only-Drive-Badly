@@ -9,7 +9,10 @@ import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.RaspiPin;
 import static com.pi4j.io.gpio.PinState.*;
 
+
+
 public class App {
+
 
 
     public static void main(String[] args) throws InterruptedException {
@@ -144,9 +147,5 @@ public class App {
         WheelFour.fourthWheel.low();
 
     }
-
-
-
-
 }
 

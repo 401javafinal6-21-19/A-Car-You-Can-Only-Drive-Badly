@@ -29,6 +29,7 @@ dependencies {
 
     // Use pi4j for pi hardware implementation
     compile 'com.pi4j:pi4j-core:1.2'
+
 }
 
 // Define the main class for the application
