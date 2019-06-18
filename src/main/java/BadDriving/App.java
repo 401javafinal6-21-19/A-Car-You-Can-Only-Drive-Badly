@@ -149,6 +149,12 @@ public class App {
         WheelFour.fourthWheel.high();
         WheelFour.fourthWheel.toggle();
 
+        boolean valid = true;
+
+        while (true) {
+            System.out.println("currently in infinite loop");
+        }
+
 //        WheelOne.firstWheel.low();
 //        WheelTwo.seccondWheel.low();
 //        WheelThree.thirdWheel.low();
