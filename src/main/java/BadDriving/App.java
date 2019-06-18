@@ -16,11 +16,23 @@ public class App {
 
 
     public static void main(String[] args) throws InterruptedException {
-        final GpioController gpio = GpioFactory.getInstance();
+        /*final GpioController gpio = GpioFactory.getInstance();*/
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Reciever r = new Reciever();
+
+                    r.getDB();
+
+                }
+            }).start();
 
 
 
-            turnLeftButtonDown();
+            Thread.sleep(30000);
+
+            /*turnLeftButtonDown();
 
             Thread.sleep(5000);
 
@@ -51,7 +63,7 @@ public class App {
             WheelOne.firstWheel.setState(false);
             WheelTwo.seccondWheel.setState(false);
             WheelThree.thirdWheel.setState(false);
-           WheelFour.fourthWheel.setState(false);
+           WheelFour.fourthWheel.setState(false);*/
     }
 
 
