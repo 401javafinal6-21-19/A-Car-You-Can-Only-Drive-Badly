@@ -22,30 +22,30 @@ public class App {
 
             turnLeftButtonDown();
 
-            Thread.sleep(600);
-
-            turnLeftButtonUp();
-
-            Thread.sleep(600);
-
-            turnRightButtonDown();
-
-            Thread.sleep(600);
-
-            turnRightButtonUp();
-
-            Thread.sleep(600);
-
-            forwardButtonDown();
-
-            Thread.sleep(600);
+            Thread.sleep(5000);
 
             forwardButtonUp();
 
-            Thread.sleep(600);
+            Thread.sleep(5000);
+
+            turnRightButtonDown();
+
+            Thread.sleep(5000);
+
+            forwardButtonUp();
+
+            Thread.sleep(5000);
+
+            forwardButtonDown();
+
+            Thread.sleep(5000);
+
+            forwardButtonUp();
+
+            Thread.sleep(5000);
 
             stop();
-            
+
             Thread.sleep(10000);
 
             gpio.shutdown();
@@ -108,10 +108,10 @@ public class App {
         WheelTwo.seccondWheel.low();
     }
 
-    public static void turnLeftButtonUp() throws InterruptedException{
+    /*public static void turnLeftButtonUp() throws InterruptedException{
         WheelFour.fourthWheel.low();
         WheelThree.thirdWheel.low();
-    }
+    }*/
 
     public static void turnRightButtonDown() throws InterruptedException{
         WheelOne.firstWheel.high();
@@ -121,10 +121,10 @@ public class App {
         WheelThree.thirdWheel.low();
     }
 
-    public static void turnRightButtonUp() throws InterruptedException{
+  /*  public static void turnRightButtonUp() throws InterruptedException{
         WheelOne.firstWheel.low();
         WheelTwo.seccondWheel.low();
-    }
+    }*/
 
     public static void forwardButtonDown() throws InterruptedException{
         WheelOne.firstWheel.high();
