@@ -36,7 +36,7 @@ public class App {
 
     public static class WheelOne{
         final static GpioController gpio = GpioFactory.getInstance();
-        final static GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "PinWheel1", HIGH);
+        final static GpioPinDigitalOutput firstWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "PinWheel1", LOW);
 
         public static void onButtonPress() throws InterruptedException{
             firstWheel.toggle();
@@ -49,7 +49,7 @@ public class App {
     public static class WheelTwo{
 
         final static GpioController gpio = GpioFactory.getInstance();
-        final static GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "PinWheel2", HIGH);
+        final static GpioPinDigitalOutput seccondWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "PinWheel2", LOW);
 
         public static void onButtonPress(){
 
@@ -60,7 +60,7 @@ public class App {
 
     public static class WheelThree{
         final static GpioController gpio = GpioFactory.getInstance();
-        final static GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "PinWheel3", HIGH);
+        final static GpioPinDigitalOutput thirdWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "PinWheel3", LOW);
 
         public static void onButtonPress() throws InterruptedException{
 
@@ -73,7 +73,7 @@ public class App {
 
     public static class WheelFour{
         final static GpioController gpio = GpioFactory.getInstance();
-        final static GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "PinWheel4", HIGH);
+        final static GpioPinDigitalOutput fourthWheel = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "PinWheel4", LOW);
 
 
         public static void onButtonPress() throws InterruptedException{
@@ -83,7 +83,7 @@ public class App {
 
     }
 
-    public static void turnLeft() throws InterruptedException{
+    public static void turnLeftButtonDown() throws InterruptedException{
         WheelFour.fourthWheel.high();
         WheelThree.thirdWheel.high();
 
@@ -91,7 +91,12 @@ public class App {
         WheelTwo.seccondWheel.low();
     }
 
-    public static void turnRight() throws InterruptedException{
+    public static void turnLeftButtonUp() throws InterruptedException{
+        WheelFour.fourthWheel.low();
+        WheelThree.thirdWheel.low();
+    }
+
+    public static void turnRightButtonDown() throws InterruptedException{
         WheelOne.firstWheel.high();
         WheelTwo.seccondWheel.high();
 
@@ -99,54 +104,35 @@ public class App {
         WheelThree.thirdWheel.low();
     }
 
-    public static void forward() throws InterruptedException{
-        /*if(WheelOne.gpio.isLow()){
-            WheelOne.onButtonPress();
-        }
+    public static void turnRightButtonUp() throws InterruptedException{
+        WheelOne.firstWheel.low();
+        WheelTwo.seccondWheel.low();
+    }
 
-        if(WheelTwo.gpio.isLow()){
-            WheelTwo.onButtonPress();
-        }
-
-        if(WheelThree.gpio.isLow()){
-            WheelThree.onButtonPress();
-        }
-
-        if(WheelFour.gpio.isLow()){
-            WheelFour.onButtonPress();
-        }*/
-
+    public static void forwardButtonDown() throws InterruptedException{
         WheelOne.firstWheel.high();
         WheelTwo.seccondWheel.high();
-        WheelThree.thirdWheel.high();
         WheelFour.fourthWheel.high();
+        WheelThree.thirdWheel.high();
+
+    }
+
+    public static void forwardButtonUp() throws InterruptedException{
+        WheelOne.firstWheel.toggle();
+        WheelTwo.seccondWheel.toggle();
+        WheelThree.thirdWheel.toggle();
+        WheelFour.fourthWheel.toggle();
     }
 
     public static void stop() throws InterruptedException{
-        System.out.println("In stop");
-
-        /*if(WheelOne.firstWheel.isHigh()){
-            System.out.println("In first wheel toggle if statement");*/
-            WheelOne.firstWheel.toggle();
-       /* }*/
-
-        /*if(WheelTwo.seccondWheel.isHigh()){*/
-            WheelTwo.seccondWheel.toggle();
-       /* }*/
-
-        /*if(WheelThree.thirdWheel.isHigh()){*/
-            WheelThree.thirdWheel.toggle();
-       /* }*/
-
-       /* if(WheelFour.fourthWheel.isHigh()){*/
-            WheelFour.fourthWheel.toggle();
-       /* }*/
-
-       /* WheelOne.firstWheel.low();
+        WheelOne.firstWheel.low();
         WheelTwo.seccondWheel.low();
         WheelThree.thirdWheel.low();
-        WheelFour.fourthWheel.low();*/
+        WheelFour.fourthWheel.low();
+
     }
+
+
 
 
 }
