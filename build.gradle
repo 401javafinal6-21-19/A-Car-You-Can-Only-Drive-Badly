@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-admin:6.8.1'*/
     compile 'com.google.cloud:google-cloud-firestore:1.8.0'
     
+    
 }
 
 // Define the main class for the application
