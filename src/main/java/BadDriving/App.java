@@ -9,7 +9,7 @@ import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.RaspiPin;
 import com.pi4j.wiringpi.Gpio;
 import static com.pi4j.io.gpio.PinState.*;
-
+import static com.sun.nio.file.SensitivityWatchEventModifier.LOW;
 
 
 public class App {
@@ -17,7 +17,7 @@ public class App {
 
 
     public static void main(String[] args) throws InterruptedException {
-        /*final GpioController gpio = GpioFactory.getInstance();*/
+        final GpioController gpio = GpioFactory.getInstance();
 
             new Thread(new Runnable() {
                 @Override
@@ -33,7 +33,7 @@ public class App {
 
             Thread.sleep(30000);
 
-            /*turnLeftButtonDown();
+            turnLeftButtonDown();
 
             Thread.sleep(5000);
 
@@ -72,7 +72,7 @@ public class App {
             WheelTwo.seccondWheel.setState(false);
             WheelThree.thirdWheel.setState(false);
 
-           WheelFour.fourthWheel.setState(false);*/
+           WheelFour.fourthWheel.setState(false);
 
            WheelFour.fourthWheel.setState(false);
     }
