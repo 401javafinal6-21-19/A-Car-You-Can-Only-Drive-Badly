@@ -18,7 +18,7 @@ public class App {
     public static void main(String[] args) throws InterruptedException {
         final GpioController gpio = GpioFactory.getInstance();
 
-        while(true) {
+
 
             turnLeftButtonDown();
 
@@ -43,7 +43,7 @@ public class App {
             forwardButtonUp();
 
             Thread.sleep(600);
-
+while (true){
             stop();
 
 //          gpio.shutdown();
