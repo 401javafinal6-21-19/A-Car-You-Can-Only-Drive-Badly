@@ -18,34 +18,36 @@ public class App {
     public static void main(String[] args) throws InterruptedException {
         final GpioController gpio = GpioFactory.getInstance();
 
-       turnLeftButtonDown();
+        while(true) {
 
-       Thread.sleep(600);
+            turnLeftButtonDown();
 
-      turnLeftButtonUp();
+            Thread.sleep(600);
 
-       Thread.sleep(600);
+            turnLeftButtonUp();
 
-       turnRightButtonDown();
+            Thread.sleep(600);
 
-       Thread.sleep(600);
+            turnRightButtonDown();
 
-       turnRightButtonUp();
+            Thread.sleep(600);
 
-       Thread.sleep(600);
+            turnRightButtonUp();
 
-       forwardButtonDown();
+            Thread.sleep(600);
 
-       Thread.sleep(600);
+            forwardButtonDown();
 
-       forwardButtonUp();
+            Thread.sleep(600);
 
-       Thread.sleep(600);
+            forwardButtonUp();
 
-       stop();
+            Thread.sleep(600);
 
-//       gpio.shutdown();
+            stop();
 
+//          gpio.shutdown();
+        }
     }
 
 
