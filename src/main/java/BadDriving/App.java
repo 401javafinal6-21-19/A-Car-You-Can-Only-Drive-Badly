@@ -23,32 +23,45 @@ public class App {
 
             turnLeftButtonDown();
 
-            Thread.sleep(600);
-
-            turnLeftButtonUp();
-
-            Thread.sleep(600);
-
-            turnRightButtonDown();
-
-            Thread.sleep(600);
-
-            turnRightButtonUp();
-
-            Thread.sleep(600);
-
-            forwardButtonDown();
-
-            Thread.sleep(600);
+            Thread.sleep(5000);
 
             forwardButtonUp();
 
+            Thread.sleep(5000);
+
+            turnRightButtonDown();
+
+            Thread.sleep(5000);
+
+            forwardButtonUp();
+
+            Thread.sleep(5000);
+
+            forwardButtonDown();
+
+            Thread.sleep(5000);
+
+            forwardButtonUp();
+
+<<<<<<< HEAD
             Thread.sleep(600);
 
             stop();
 
           gpio.shutdown();
 
+=======
+            Thread.sleep(5000);
+
+            stop();
+
+            Thread.sleep(10000);
+
+            WheelOne.firstWheel.setState(false);
+            WheelTwo.seccondWheel.setState(false);
+            WheelThree.thirdWheel.setState(false);
+           WheelFour.fourthWheel.setState(false);
+>>>>>>> 68e3c58bd5414b7be21a2a4fcbb956bf1f96b8a4
     }
 
 
@@ -107,10 +120,10 @@ public class App {
         WheelTwo.seccondWheel.low();
     }
 
-    public static void turnLeftButtonUp() throws InterruptedException{
+    /*public static void turnLeftButtonUp() throws InterruptedException{
         WheelFour.fourthWheel.low();
         WheelThree.thirdWheel.low();
-    }
+    }*/
 
     public static void turnRightButtonDown() throws InterruptedException{
         WheelOne.firstWheel.high();
@@ -120,10 +133,10 @@ public class App {
         WheelThree.thirdWheel.low();
     }
 
-    public static void turnRightButtonUp() throws InterruptedException{
+  /*  public static void turnRightButtonUp() throws InterruptedException{
         WheelOne.firstWheel.low();
         WheelTwo.seccondWheel.low();
-    }
+    }*/
 
     public static void forwardButtonDown() throws InterruptedException{
         WheelOne.firstWheel.high();
@@ -134,17 +147,41 @@ public class App {
     }
 
     public static void forwardButtonUp() throws InterruptedException{
-        WheelOne.firstWheel.toggle();
-        WheelTwo.seccondWheel.toggle();
-        WheelThree.thirdWheel.toggle();
-        WheelFour.fourthWheel.toggle();
+        WheelOne.firstWheel.low();
+        WheelTwo.seccondWheel.low();
+        WheelThree.thirdWheel.low();
+        WheelFour.fourthWheel.low();
     }
 
 
     public static void stop() throws InterruptedException{
+<<<<<<< HEAD
         
         WheelOne.firstWheel.high();
         WheelOne.firstWheel.toggle();
+=======
+//        WheelOne.firstWheel.high();
+//        WheelOne.firstWheel.toggle();
+//
+//        WheelTwo.seccondWheel.high();
+//        WheelTwo.seccondWheel.toggle();
+//
+//        WheelThree.thirdWheel.high();
+//        WheelThree.thirdWheel.toggle();
+//
+//        WheelFour.fourthWheel.high();
+//        WheelFour.fourthWheel.toggle();
+        /*System.out.println("just hit the stop method");
+        WheelOne.firstWheel.low();
+        WheelTwo.seccondWheel.low();
+        WheelThree.thirdWheel.low();
+        WheelFour.fourthWheel.low();*/
+
+        WheelOne.firstWheel.setState(false);
+        WheelTwo.seccondWheel.setState(false);
+        WheelThree.thirdWheel.setState(false);
+        WheelFour.fourthWheel.setState(false);
+>>>>>>> 68e3c58bd5414b7be21a2a4fcbb956bf1f96b8a4
 
         WheelTwo.seccondWheel.high();
         WheelTwo.seccondWheel.toggle();
