@@ -9,7 +9,6 @@ import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
 import com.pi4j.wiringpi.Gpio;
 
-import java.awt.Button;
 
 public class Car {
     final private GpioController gpio;
@@ -20,10 +19,11 @@ public class Car {
 
 //    Example has a COMMAND_TIMEOUT = 300; here.
 
-    Button left = //add the id into here for the left button
-    Button right = //add the id for the right button here.
-    Button down = //add the id for the right button here.
-    Button up = //add the id for the up button here.
+//    Button left = //add the id into here for the left button
+//    Button right = //add the id for the right button here.
+//    Button down = //add the id for the right button here.
+//    Button up = //add the id for the up button here.
+
 
     public Car() {
         try {
