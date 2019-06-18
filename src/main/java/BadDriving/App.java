@@ -15,15 +15,27 @@ public class App {
     public static void main(String[] args) throws InterruptedException {
         final GpioController gpio = GpioFactory.getInstance();
 
-       turnLeft();
+       turnLeftButtonDown();
 
        Thread.sleep(600);
 
-       turnRight();
+      turnLeftButtonUp();
 
        Thread.sleep(600);
 
-       forward();
+       turnRightButtonDown();
+
+       Thread.sleep(600);
+
+       turnRightButtonUp();
+
+       Thread.sleep(600);
+
+       forwardButtonDown();
+
+       Thread.sleep(600);
+
+       forwardButtonUp();
 
        Thread.sleep(600);
 
@@ -123,6 +135,7 @@ public class App {
         WheelThree.thirdWheel.toggle();
         WheelFour.fourthWheel.toggle();
     }
+
 
     public static void stop() throws InterruptedException{
         WheelOne.firstWheel.low();
