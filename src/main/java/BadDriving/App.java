@@ -7,6 +7,7 @@ import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.RaspiPin;
+import com.pi4j.wiringpi.Gpio;
 import static com.pi4j.io.gpio.PinState.*;
 
 
@@ -54,6 +55,13 @@ public class App {
 
             forwardButtonUp();
 
+
+            Thread.sleep(600);
+
+            stop();
+
+          gpio.shutdown();
+
             Thread.sleep(5000);
 
             stop();
@@ -63,7 +71,10 @@ public class App {
             WheelOne.firstWheel.setState(false);
             WheelTwo.seccondWheel.setState(false);
             WheelThree.thirdWheel.setState(false);
+
            WheelFour.fourthWheel.setState(false);*/
+
+           WheelFour.fourthWheel.setState(false);
     }
 
 
@@ -157,6 +168,7 @@ public class App {
 
 
     public static void stop() throws InterruptedException{
+
 //        WheelOne.firstWheel.high();
 //        WheelOne.firstWheel.toggle();
 //
@@ -180,6 +192,7 @@ public class App {
         WheelFour.fourthWheel.setState(false);
 
     }
+
 
 }
 
