@@ -45,6 +45,8 @@ public class App {
             Thread.sleep(600);
 
             stop();
+            
+            Thread.sleep(10000);
 
             gpio.shutdown();
 
@@ -133,10 +135,10 @@ public class App {
     }
 
     public static void forwardButtonUp() throws InterruptedException{
-        WheelOne.firstWheel.toggle();
-        WheelTwo.seccondWheel.toggle();
-        WheelThree.thirdWheel.toggle();
-        WheelFour.fourthWheel.toggle();
+        WheelOne.firstWheel.low();
+        WheelTwo.seccondWheel.low();
+        WheelThree.thirdWheel.low();
+        WheelFour.fourthWheel.low();
     }
 
 
