@@ -51,7 +51,25 @@ public class Car {
 
     public void steering(SteeringCommandsButtonDown cmd) {
 //        need to figure out onClick of button or button held down do the things above.
-        while (//whatever button is pushed or true or whatever) {
+        Reciever r = new Reciever();
+        switch (r.direction){
+            case "forward":
+
+                break;
+            case "stop":
+
+                break;
+            case "left":
+
+                break;
+            case "right":
+
+                break;
+           default:
+
+                break;
+        }
+        //while (//whatever button is pushed or true or whatever) {
             //do the logic for that movement.
     }
 //    Might need to to this for each  movement direction

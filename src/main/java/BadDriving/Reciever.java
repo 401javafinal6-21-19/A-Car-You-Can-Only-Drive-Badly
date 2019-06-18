@@ -16,6 +16,7 @@ public void getDB() {
         @Override
         public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirestoreException error) {
             direction = value.get("direction").toString();
+            System.out.println(value.get("direction"));
         }
     });
 
