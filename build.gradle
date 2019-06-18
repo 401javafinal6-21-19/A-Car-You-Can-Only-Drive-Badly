@@ -31,9 +31,6 @@ dependencies {
     compile 'com.pi4j:pi4j-core:1.2'
 
     //firebase
-/*    implementation 'com.google.firebase:firebase-firestore:19.0.1'
-    implementation 'com.google.firebase:firebase-core:16.0.9'
-    implementation 'com.google.firebase:firebase-admin:6.8.1'*/
     compile 'com.google.cloud:google-cloud-firestore:1.8.0'
     
 }
