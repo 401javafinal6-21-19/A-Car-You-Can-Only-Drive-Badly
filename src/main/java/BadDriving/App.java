@@ -136,29 +136,22 @@ public class App {
 
 
     public static void stop() throws InterruptedException{
-        WheelOne.firstWheel.high();
-        WheelOne.firstWheel.toggle();
+//        WheelOne.firstWheel.high();
+//        WheelOne.firstWheel.toggle();
+//
+//        WheelTwo.seccondWheel.high();
+//        WheelTwo.seccondWheel.toggle();
+//
+//        WheelThree.thirdWheel.high();
+//        WheelThree.thirdWheel.toggle();
+//
+//        WheelFour.fourthWheel.high();
+//        WheelFour.fourthWheel.toggle();
+        System.out.println("just hit the stop method");
         WheelOne.firstWheel.low();
-
-        WheelTwo.seccondWheel.high();
-        WheelTwo.seccondWheel.toggle();
-
-        WheelThree.thirdWheel.high();
-        WheelThree.thirdWheel.toggle();
-
-        WheelFour.fourthWheel.high();
-        WheelFour.fourthWheel.toggle();
-
-        boolean valid = true;
-
-        while (true) {
-            System.out.println("currently in infinite loop");
-        }
-
-//        WheelOne.firstWheel.low();
-//        WheelTwo.seccondWheel.low();
-//        WheelThree.thirdWheel.low();
-//        WheelFour.fourthWheel.low();
+        WheelTwo.seccondWheel.low();
+        WheelThree.thirdWheel.low();
+        WheelFour.fourthWheel.low();
 
     }
 
