@@ -5,14 +5,14 @@ import com.pi4j.io.gpio.*;
 public class Steering {
 
     final  GpioController gpio;
-    final  GpioPinDigitalOutput thrustPin26;
-    final  GpioPinDigitalOutput thrustPin27;
-    final  GpioPinDigitalOutput thrustPin28;
-    final  GpioPinDigitalOutput thrustPin29;
-    GpioPinDigitalOutput wheelOne;
+    final  GpioPinDigitalOutput wheelOne;
+    final  GpioPinDigitalOutput wheelTwo;
+    final  GpioPinDigitalOutput wheelThree;
+    final  GpioPinDigitalOutput wheelFour;
+    /*GpioPinDigitalOutput wheelOne;
     GpioPinDigitalOutput wheelTwo;
     GpioPinDigitalOutput wheelThree;
-    GpioPinDigitalOutput wheelFour;
+    GpioPinDigitalOutput wheelFour*/;
 
     public Steering() {
 
@@ -21,15 +21,15 @@ public class Steering {
 
             gpio = GpioFactory.getInstance();
             System.out.println("gpio instance at 24 in car" + gpio);
-            thrustPin26 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "thrustPin26", PinState.LOW);
-            thrustPin27 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "thrustPin27", PinState.LOW);
-            thrustPin28 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "thrustPin28", PinState.LOW);
-            thrustPin29 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "thrustPin29", PinState.LOW);
-            System.out.println("pin 26, " + thrustPin26 + " pin 27, " + thrustPin27 + " pin 28, " + thrustPin28+ " pin 29, " + thrustPin29);
-            wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+            wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "thrustPin26", PinState.LOW);
+            wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "wheelTwo", PinState.LOW);
+            wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "wheelThree", PinState.LOW);
+            wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "wheelFour", PinState.LOW);
+            System.out.println("pin 26, " + wheelOne + " pin 27, " + wheelTwo + " pin 28, " + wheelThree + " pin 29, " + wheelFour);
+          /*  wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
             wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
             wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
-            wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
+            wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);*/
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Car was not initialized");
