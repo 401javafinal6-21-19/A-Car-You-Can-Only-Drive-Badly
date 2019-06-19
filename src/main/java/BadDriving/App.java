@@ -27,8 +27,7 @@ public class App{
         }).start();
 
         Steering hotRod = new Steering();
-
-        hotRod.steeringButtonDepressed();
+        
     }
 
 }
