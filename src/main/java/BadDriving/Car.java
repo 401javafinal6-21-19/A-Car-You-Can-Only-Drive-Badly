@@ -15,13 +15,6 @@ public class Car {
     final private GpioPinDigitalOutput thrustPin28;
     final private GpioPinDigitalOutput thrustPin29;
 
-//    Example has a COMMAND_TIMEOUT = 300; here.
-
-//    Button left = //add the id into here for the left button
-//    Button right = //add the id for the right button here.
-//    Button down = //add the id for the right button here.
-//    Button up = //add the id for the up button here.
-
 
     public Car() {
         try {
@@ -63,8 +56,6 @@ public class Car {
             default: stop();
                 break;
         }
-        //while (//whatever button is pushed or true or whatever) {
-            //do the logic for that movement.
     }
 
     public void steeringButtonReleased() throws InterruptedException {
@@ -192,5 +183,8 @@ public class Car {
         wheelThree.high();
         wheelFour.high();
     }
+
+    //  Everything above this line is within steeringButtonReleased
+
 
 }
