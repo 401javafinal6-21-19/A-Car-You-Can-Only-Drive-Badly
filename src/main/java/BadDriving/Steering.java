@@ -37,7 +37,7 @@ public class Steering {
     }
 
     public void steeringButtonDepressed(){
-        Reciever r = new Reciever();
+        Car r = new Car();
         switch (r.direction) {
             case "forward":
                 try {
@@ -89,7 +89,7 @@ public class Steering {
     }
 
     public void steeringButtonReleased(){
-        Reciever r = new Reciever();
+        Car r = new Car();
         switch (r.direction){
             case "forward release":
                 try {
