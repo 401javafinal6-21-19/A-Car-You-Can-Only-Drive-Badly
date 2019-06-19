@@ -23,8 +23,10 @@ public class Reciever {
     public void getDB() {
         //get instance of firebase firestore database from the project a-car-you-can-only-drive-badly
     FirestoreOptions firestoreOptions = FirestoreOptions.getDefaultInstance().toBuilder().setProjectId("a-car-you-can-only-drive-badly").build();
+        System.out.println("firestoreOptions on line 26 of the Reciever" + firestoreOptions);
     //set the db to the instance from the previous line
     db = firestoreOptions.getService();
+        System.out.println("firestore database on line 29 of the Reciever" + db);
     //create a listener on the car document in the driving collection in the firebase firestore a-car-you-can-only-drive-badly
     db.collection("driving").document("car").addSnapshotListener(new EventListener<DocumentSnapshot>() {
         @Override
@@ -32,7 +34,7 @@ public class Reciever {
         public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirestoreException error) {
             //...set the json object direction to a string and assign it to the direction variable in this app
             direction = value.get("direction").toString();
-            System.out.println(value.get("direction"));
+            System.out.println("Value in Reciever at 37" + value.get("direction"));
         }
     });
 

@@ -21,11 +21,12 @@ public class Car {
             System.out.println("initializing Car object");
 
             gpio = GpioFactory.getInstance();
-
+            System.out.println("gpio instance at 24 in car" + gpio);
             thrustPin26 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "thrustPin26", PinState.LOW);
             thrustPin27 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "thrustPin27", PinState.LOW);
             thrustPin28 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "thrustPin28", PinState.LOW);
             thrustPin29 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "thrustPin29", PinState.LOW);
+            System.out.println("pin 26, " + thrustPin26 + " pin 27, " + thrustPin27 + " pin 28, " + thrustPin28+ " pin 29, " + thrustPin29);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Car was not initialized");
@@ -39,22 +40,27 @@ public class Car {
             switch (r.direction) {
                 case "forward":
                     forward();
+                    System.out.println("direction in case forward " + r.direction);
                     break;
 
                 case "stop":
                     stop();
+                    System.out.println("direction in case stop " + r.direction);
                     break;
 
                 case "left":
                     left();
+                    System.out.println("direction in case left " + r.direction);
                     break;
 
                 case "right":
                     right();
+                    System.out.println("direction in case right " + r.direction);
                     break;
 
                 default:
                     stop();
+                    System.out.println("direction in case stop " + r.direction);
                     break;
 
             }
