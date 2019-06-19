@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 public class CarTest {
 
 
-        GpioTest gpio = GpioTest.getInstance();
+      /*  GpioTest gpio = GpioTest.getInstance();
         public GpioPinDigitalOutput testPin26 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "thrustPin26", PinState.LOW);
        public  GpioPinDigitalOutput testPin27 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "wheelTwo", PinState.LOW);
        public GpioPinDigitalOutput testPin28 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "wheelThree", PinState.LOW);
@@ -83,6 +83,6 @@ public class CarTest {
 
     public void leftReleaseTest(){
 
-    }
+    }*/
 
 }

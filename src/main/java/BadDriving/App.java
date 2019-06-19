@@ -5,12 +5,6 @@ package BadDriving;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.GpioPinDigitalOutput;
-import com.pi4j.io.gpio.RaspiPin;
-import static com.pi4j.io.gpio.PinState.LOW;
-import java.lang.Thread;
-
-
 
 public class App{
 
@@ -27,7 +21,7 @@ public class App{
         }).start();
 
         Steering hotRod = new Steering();
-        
+
     }
 
 }

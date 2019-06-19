@@ -16,12 +16,12 @@ public class Steering {
             System.out.println("initializing Car object");
 
             gpio = GpioFactory.getInstance();
-            System.out.println("gpio instance at 24 in car" + gpio);
+
             wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "thrustPin26", PinState.LOW);
             wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "wheelTwo", PinState.LOW);
             wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "wheelThree", PinState.LOW);
             wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "wheelFour", PinState.LOW);
-            System.out.println("pin 26, " + wheelOne + " pin 27, " + wheelTwo + " pin 28, " + wheelThree + " pin 29, " + wheelFour);
+
 
         } catch (Exception e) {
             e.printStackTrace();
