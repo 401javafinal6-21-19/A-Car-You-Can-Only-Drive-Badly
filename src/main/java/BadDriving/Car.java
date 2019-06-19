@@ -1,14 +1,6 @@
 package BadDriving;
 
-import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.GpioPin;
-import com.pi4j.io.gpio.GpioPinDigital;
-import com.pi4j.io.gpio.GpioPinDigitalInput;
-import com.pi4j.io.gpio.GpioPinDigitalOutput;
-import com.pi4j.io.gpio.PinState;
-import com.pi4j.io.gpio.RaspiPin;
-import static com.sun.nio.file.SensitivityWatchEventModifier.HIGH;
+import com.pi4j.io.gpio.*;
 
 
 public class Car {
@@ -53,6 +45,7 @@ public class Car {
     public void steering(SteeringCommandsButtonDown cmd) throws InterruptedException {
 //        need to figure out onClick of button or button held down do the things above.
         Reciever r = new Reciever();
+
         switch (r.direction){
             case "forward":
                 forward();
