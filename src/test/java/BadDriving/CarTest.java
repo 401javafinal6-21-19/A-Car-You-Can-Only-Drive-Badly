@@ -17,13 +17,18 @@ public class CarTest {
        public  GpioPinDigitalOutput testPin27 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "thrustPin27", PinState.LOW);
        public GpioPinDigitalOutput testPin28 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "thrustPin28", PinState.LOW);
        public GpioPinDigitalOutput testPin29 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "thrustPin29", PinState.LOW);
+    GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+    GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
+    GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
+    GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
 
-    Car car = new Car();
+     Steering steering = new Steering();
+
 
     @Test
     public void forwardTest() throws Exception {
 
-        car.forward();
+        steering.forward();
 
         assertEquals("Pin 26 is not on high", "high", testPin26.getState().toString());
         assertEquals("Pin 27 is not on high", "high", testPin27.getState().toString());
@@ -34,7 +39,7 @@ public class CarTest {
     @Test
     public void stopTest() throws Exception{
 
-        car.stop();
+        steering.stop();
 
         assertEquals("Pin 26 is not on low", "low", testPin26.getState().toString());
         assertEquals("Pin 27 is not on low", "low", testPin27.getState().toString());
@@ -47,7 +52,7 @@ public class CarTest {
     @Test
     public void leftTest()throws Exception{
 
-        car.left();
+        steering.left();
 
         assertEquals("Pin 26 is not on low", "low", testPin26.getState().toString());
         assertEquals("Pin 27 is not on low", "low", testPin27.getState().toString());
@@ -59,7 +64,7 @@ public class CarTest {
     @Test
     public void rightTest() throws Exception{
 
-        car.right();
+        steering.right();
 
         assertEquals("Pin 26 is not on high", "high", testPin26.getState().toString());
         assertEquals("Pin 27 is not on high", "high", testPin27.getState().toString());
