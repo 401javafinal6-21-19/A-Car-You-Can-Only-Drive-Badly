@@ -10,10 +10,10 @@ import com.pi4j.io.gpio.*;
 
 public class Car {
     final private GpioController gpio;
-    final private GpioPinDigitalOutput thrustPin26;
-    final private GpioPinDigitalOutput thrustPin27;
-    final private GpioPinDigitalOutput thrustPin28;
-    final private GpioPinDigitalOutput thrustPin29;
+    final protected GpioPinDigitalOutput thrustPin26;
+    final protected GpioPinDigitalOutput thrustPin27;
+    final protected GpioPinDigitalOutput thrustPin28;
+    final protected GpioPinDigitalOutput thrustPin29;
 
 
     public Car() {
