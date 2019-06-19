@@ -18,14 +18,19 @@ public class Reciever {
 
     /**
      * the method on Receiver which connects with firebase, accesses the firestore database and finds the correct Project, locates the necessary collection and document, and listens on that document for changes.
-     * When changes are heard, it gets the new value of direction off the document car in firebase, and sets that to the String direction in this app
+     * When changes are heard, it gets the new value of direction off the document car in firebase, and sets that to the String direction in this app.
      */
     public void getDB() {
+        //get instance of firebase firestore database from the project a-car-you-can-only-drive-badly
     FirestoreOptions firestoreOptions = FirestoreOptions.getDefaultInstance().toBuilder().setProjectId("a-car-you-can-only-drive-badly").build();
+    //set the db to the instance from the previous line
     db = firestoreOptions.getService();
+    //create a listener on the car document in the driving collection in the firebase firestore a-car-you-can-only-drive-badly
     db.collection("driving").document("car").addSnapshotListener(new EventListener<DocumentSnapshot>() {
         @Override
+        //on a change in that document...
         public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirestoreException error) {
+            //...set the json object direction to a string and assign it to the direction variable in this app
             direction = value.get("direction").toString();
             System.out.println(value.get("direction"));
         }
