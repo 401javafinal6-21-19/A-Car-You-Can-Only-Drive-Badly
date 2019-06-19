@@ -2,13 +2,9 @@ package BadDriving;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.GpioPin;
-import com.pi4j.io.gpio.GpioPinDigital;
-import com.pi4j.io.gpio.GpioPinDigitalInput;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
-import static com.sun.nio.file.SensitivityWatchEventModifier.HIGH;
 
 
 public class Car {
@@ -41,17 +37,9 @@ public class Car {
             throw new RuntimeException("Car was not initialized");
         }
     }
-//  Commands when buttons are pressed down
-    public enum SteeringCommandsButtonDown {
-        STOP, TurnLeftButtonDown, TurnRightButtonDown, ForwardButtonDown
-    }
-//  Commands when buttons are released
-    public enum SteeringCommandsButtonReleased {
-        TurnLeftButtonReleased, TurnRightButtonReleased, ForwardButtonReleased
-    }
 
-    public void steering(SteeringCommandsButtonDown cmd) throws InterruptedException {
-//        need to figure out onClick of button or button held down do the things above.
+
+    public void steeringButtonDepressed() throws InterruptedException {
         Reciever r = new Reciever();
         switch (r.direction){
             case "forward":
@@ -69,15 +57,35 @@ public class Car {
             case "right":
                 right();
                 break;
-                
-           default:
 
+            default: stop();
                 break;
         }
         //while (//whatever button is pushed or true or whatever) {
             //do the logic for that movement.
     }
-//    Might need to to this for each  movement direction
+
+    public void steeringButtonReleased() throws InterruptedException {
+        Reciever r = new Reciever();
+        switch (r.direction){
+            case "forward release":
+                forwardRelease();
+                break;
+
+            case "left release":
+                leftRelease();
+                break;
+
+            case "right release":
+                rightRelease();
+                break;
+
+            default: stop();
+                break;
+        }
+    }
+
+//  Everything below this line is within steeringButtonDepressed
 
     public void forward() throws InterruptedException {
 
@@ -138,6 +146,49 @@ public class Car {
         wheelFour.high();
         wheelFour.toggle();
     }
+//  Everything above this line is within steeringButtonDepressed
 
+//  Everything below this line is within steeringButtonReleased
+
+    public void forwardRelease() throws InterruptedException {
+
+        GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+        GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
+        GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
+        GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
+
+        wheelOne.low();
+        wheelTwo.low();
+        wheelThree.low();
+        wheelFour.low();
+    }
+
+    public void rightRelease() throws InterruptedException {
+
+        GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+        GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
+        GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
+        GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
+
+        wheelOne.low();
+        wheelTwo.low();
+        wheelThree.low();
+        wheelFour.low();
+    }
+
+    public void leftRelease() throws InterruptedException {
+
+        GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+        GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
+        GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
+        GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
+
+        wheelOne.high();
+        wheelOne.toggle();
+        wheelTwo.high();
+        wheelTwo.toggle();
+        wheelThree.high();
+        wheelFour.high();
+    }
 
 }
