@@ -12,7 +12,7 @@ import static com.sun.nio.file.SensitivityWatchEventModifier.HIGH;
 
 
 public class Car {
-    static final private GpioController gpio;
+    final private GpioController gpio;
     final private GpioPinDigitalOutput thrustPin26;
     final private GpioPinDigitalOutput thrustPin27;
     final private GpioPinDigitalOutput thrustPin28;
@@ -50,23 +50,26 @@ public class Car {
         TurnLeftButtonReleased, TurnRightButtonReleased, ForwardButtonReleased
     }
 
-    public void steering(SteeringCommandsButtonDown cmd) {
+    public void steering(SteeringCommandsButtonDown cmd) throws InterruptedException {
 //        need to figure out onClick of button or button held down do the things above.
         Reciever r = new Reciever();
         switch (r.direction){
             case "forward":
                 forward();
-
                 break;
+
             case "stop":
-
+                stop();
                 break;
+
             case "left":
-
+                left();
                 break;
+
             case "right":
-
+                right();
                 break;
+                
            default:
 
                 break;
@@ -78,12 +81,63 @@ public class Car {
 
     public void forward() throws InterruptedException {
 
-        GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "PinWheel1", HIGH);
-        GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "PinWheel2", HIGH);
-        GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "PinWheel3", HIGH);
-        GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "PinWheel4", HIGH);
+        GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+        GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
+        GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
+        GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
 
-
+        wheelOne.high();
+        wheelTwo.high();
+        wheelThree.high();
+        wheelFour.high();
     }
+
+    public void stop() throws InterruptedException {
+
+        GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+        GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
+        GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
+        GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
+
+        wheelOne.high();
+        wheelOne.toggle();
+        wheelTwo.high();
+        wheelTwo.toggle();
+        wheelThree.high();
+        wheelThree.toggle();
+        wheelFour.high();
+        wheelFour.toggle();
+    }
+
+    public void left() throws InterruptedException {
+
+        GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+        GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
+        GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
+        GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
+
+        wheelOne.high();
+        wheelOne.toggle();
+        wheelTwo.high();
+        wheelTwo.toggle();
+        wheelThree.high();
+        wheelFour.high();
+    }
+
+    public void right() throws InterruptedException {
+
+        GpioPinDigitalOutput wheelOne = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+        GpioPinDigitalOutput wheelTwo = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
+        GpioPinDigitalOutput wheelThree = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
+        GpioPinDigitalOutput wheelFour = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
+
+        wheelOne.high();
+        wheelTwo.high();
+        wheelThree.high();
+        wheelThree.toggle();
+        wheelFour.high();
+        wheelFour.toggle();
+    }
+
 
 }

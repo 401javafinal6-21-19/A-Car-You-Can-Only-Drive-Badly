@@ -18,6 +18,7 @@ public class App {
 
     public static void main(String[] args) throws InterruptedException {
         final GpioController gpio = GpioFactory.getInstance();
+        gpio.
 
             new Thread(new Runnable() {
                 @Override
