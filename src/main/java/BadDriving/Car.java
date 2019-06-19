@@ -46,8 +46,8 @@ public class Car {
 
                 Steering steering = new Steering();
 
-                steering.steeringButtonDepressed();
-                steering.steeringButtonReleased();
+                steering.steeringButtonDepressed(direction);
+                steering.steeringButtonReleased(direction);
 
             }
         });
