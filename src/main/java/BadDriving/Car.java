@@ -35,26 +35,32 @@ public class Car {
 
     public void steeringButtonDepressed() throws InterruptedException {
         Reciever r = new Reciever();
+        try {
+            switch (r.direction) {
+                case "forward":
+                    forward();
+                    break;
 
-        switch (r.direction){
-            case "forward":
-                forward();
-                break;
+                case "stop":
+                    stop();
+                    break;
 
-            case "stop":
-                stop();
-                break;
+                case "left":
+                    left();
+                    break;
 
-            case "left":
-                left();
-                break;
+                case "right":
+                    right();
+                    break;
 
-            case "right":
-                right();
-                break;
+                default:
+                    stop();
+                    break;
 
-            default: stop();
-                break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Directional methods are not working");
         }
     }
 
