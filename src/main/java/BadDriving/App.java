@@ -18,18 +18,18 @@ public class App{
         final GpioController gpio = GpioFactory.getInstance();
 
 
-         new Thread(new Runnable() {
-             @Override
-             public void run() {
-                 Reciever r = new Reciever();
-                 r.getDB();
-             }
-         }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Reciever r = new Reciever();
+                r.getDB();
+            }
+        }).start();
 
-         Car hotRod = new Car();
+        Car hotRod = new Car();
 
-         hotRod.steeringButtonDepressed();
-
+        hotRod.steeringButtonDepressed();
+    }
 
 //
 //            Thread.sleep(30000);
