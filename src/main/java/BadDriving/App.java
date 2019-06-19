@@ -12,13 +12,9 @@ public class App{
         final GpioController gpio = GpioFactory.getInstance();
 
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+
                Car r = new Car();
-                r.getDB();
-            }
-        }).start();
+               r.getDB();
 
         Steering hotRod = new Steering();
 
