@@ -114,6 +114,11 @@ public class GpioTest implements GpioController {
         return null;
     }
 
+
+    public String getState(){
+        return state;
+    }
+
     @Override
     public void toggle(GpioPinDigitalOutput... pin) {
         if(this.state.equals("high")){
