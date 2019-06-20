@@ -80,13 +80,7 @@ public class Steering {
         highWrap(wheel4);
     }
 
-    public void forward(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4)  {
 
-        highWrap(wheel1);
-        highWrap(wheel2);
-        highWrap(wheel3);
-        highWrap(wheel4);
-    }
 
     public void stop(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)  {
 
@@ -100,17 +94,7 @@ public class Steering {
         toggleWrap(wheel4);
     }
 
-    public void stop(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4)  {
 
-        highWrap(wheel1);
-        toggleWrap(wheel1);
-        highWrap(wheel2);
-        toggleWrap(wheel2);
-        highWrap(wheel3);
-        toggleWrap(wheel3);
-        highWrap(wheel4);
-        toggleWrap(wheel4);
-    }
 
     public void left(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4) {
 
@@ -121,15 +105,7 @@ public class Steering {
         highWrap(wheel3);
         highWrap(wheel4);
     }
-    public void left(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4) {
 
-        highWrap(wheel1);
-        toggleWrap(wheel1);
-        highWrap(wheel2);
-        toggleWrap(wheel2);
-        highWrap(wheel3);
-        highWrap(wheel4);
-    }
     public void right(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4) {
 
         highWrap(wheel1);
@@ -140,15 +116,7 @@ public class Steering {
         toggleWrap(wheel4);
     }
 
-    public void right(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4) {
 
-        highWrap(wheel1);
-        highWrap(wheel2);
-        highWrap(wheel3);
-        toggleWrap(wheel3);
-        highWrap(wheel4);
-        toggleWrap(wheel4);
-    }
 //Wrappers to abstract the j4pi library for testing and modularity
 
     public void highWrap(GpioPinDigitalOutput wheel){
@@ -166,17 +134,5 @@ public class Steering {
 
     }
 
-//overloaded wrappers for testing
 
-    public void highWrap(GpioTest wheel){
-        wheel.high();
-    }
-
-    public void lowWrap(GpioTest wheel){
-        wheel.low();
-    }
-
-    public void toggleWrap(GpioTest wheel){
-        wheel.toggle();
-    }
 }
