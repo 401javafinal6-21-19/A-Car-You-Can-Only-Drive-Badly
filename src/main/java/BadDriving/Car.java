@@ -21,6 +21,8 @@ public class Car {
      */
     String direction;
 
+    Steering steering;
+
     /**
      * the method on Receiver which connects with firebase, accesses the firestore database and finds the correct Project, locates the necessary collection and document, and listens on that document for changes.
      * When changes are heard, it gets the new value of direction off the document car in firebase, and sets that to the String direction in this app.
@@ -32,6 +34,7 @@ public class Car {
 
         FileInputStream serviceAccount = new FileInputStream(credentialsUrl);
 
+        steering = new Steering();
 
 
         FirestoreOptions firestoreOptions = FirestoreOptions
@@ -54,7 +57,7 @@ public class Car {
                 direction = value.get("direction").toString();
                 System.out.println("Value in Car at 45" + value.get("direction"));
 
-                Steering steering = new Steering();
+
 
                 steering.steeringButtonDepressed(direction);
 
