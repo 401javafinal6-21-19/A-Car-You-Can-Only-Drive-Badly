@@ -121,42 +121,42 @@ public class Steering {
 
     public void forward() throws InterruptedException {
 
-        wheelOne.high();
-        wheelTwo.high();
-        wheelThree.high();
-        wheelFour.high();
+        highWrap(wheelOne);
+        highWrap(wheelTwo);
+        highWrap(wheelThree);
+        highWrap(wheelFour);
     }
 
     public void stop() throws InterruptedException {
 
-        wheelOne.high();
-        wheelOne.toggle();
-        wheelTwo.high();
-        wheelTwo.toggle();
-        wheelThree.high();
-        wheelThree.toggle();
-        wheelFour.high();
-        wheelFour.toggle();
+        highWrap(wheelOne);
+        toggleWrap(wheelOne);
+        highWrap(wheelTwo);
+        toggleWrap(wheelTwo);
+        highWrap(wheelThree);
+        toggleWrap(wheelThree);
+        highWrap(wheelFour);
+        toggleWrap(wheelFour);
     }
 
     public void left() throws InterruptedException {
 
-        wheelOne.high();
-        wheelOne.toggle();
-        wheelTwo.high();
-        wheelTwo.toggle();
-        wheelThree.high();
-        wheelFour.high();
+        highWrap(wheelOne);
+        toggleWrap(wheelOne);
+        highWrap(wheelTwo);
+        toggleWrap(wheelTwo);
+        highWrap(wheelThree);
+        highWrap(wheelFour);
     }
 
     public void right() throws InterruptedException {
 
-        wheelOne.high();
-        wheelTwo.high();
-        wheelThree.high();
-        wheelThree.toggle();
-        wheelFour.high();
-        wheelFour.toggle();
+        highWrap(wheelOne);
+        highWrap(wheelTwo);
+        highWrap(wheelThree);
+        toggleWrap(wheelThree);
+        highWrap(wheelFour);
+        toggleWrap(wheelFour);
     }
 //  Everything above this line is within steeringButtonDepressed
 
@@ -164,27 +164,56 @@ public class Steering {
 
     public void forwardRelease() throws InterruptedException {
 
-        wheelOne.low();
-        wheelTwo.low();
-        wheelThree.low();
-        wheelFour.low();
+        lowWrap(wheelOne);
+        lowWrap(wheelTwo);
+        lowWrap(wheelThree);
+        lowWrap(wheelFour);
     }
 
     public void rightRelease() throws InterruptedException {
 
-        wheelOne.low();
-        wheelTwo.low();
-        wheelThree.low();
-        wheelFour.low();
+
+        lowWrap(wheelOne);
+        lowWrap(wheelTwo);
+        lowWrap(wheelThree);
+        lowWrap(wheelFour);
     }
 
     public void leftRelease() throws InterruptedException {
 
-        wheelOne.high();
-        wheelOne.toggle();
-        wheelTwo.high();
-        wheelTwo.toggle();
-        wheelThree.high();
-        wheelFour.high();
+        highWrap(wheelOne);
+        toggleWrap(wheelOne);
+        highWrap(wheelTwo);
+        toggleWrap(wheelTwo);
+        highWrap(wheelThree);
+        highWrap(wheelFour);
+    }
+
+//Wrappers to abstract the j4pi library for testing and modularity
+
+    public void highWrap(GpioPinDigitalOutput wheel) throws InterruptedException{
+        wheel.high();
+    }
+
+    public void lowWrap(GpioPinDigitalOutput wheel) throws InterruptedException{
+        wheel.low();
+    }
+
+    public void toggleWrap(GpioPinDigitalOutput wheel) throws InterruptedException{
+        wheel.toggle();
+    }
+
+//overloaded wrappers for testing
+
+    public void highWrap(GpioTest wheel) throws InterruptedException{
+        wheel.high();
+    }
+
+    public void lowWrap(GpioTest wheel) throws InterruptedException{
+        wheel.low();
+    }
+
+    public void toggleWrap(GpioTest wheel) throws InterruptedException{
+        wheel.toggle();
     }
 }

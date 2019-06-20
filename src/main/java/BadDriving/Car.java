@@ -24,7 +24,10 @@ public class Car {
      */
     public void getDB() {
         //get instance of firebase firestore database from the project a-car-you-can-only-drive-badly
-        FirestoreOptions firestoreOptions = FirestoreOptions.getDefaultInstance().toBuilder().setProjectId("a-car-you-can-only-drive-badly").build();
+        FirestoreOptions firestoreOptions =
+                FirestoreOptions.getDefaultInstance().toBuilder()
+                        .setProjectId("a-car-you-can-only-drive-badly")
+                        .build();
         System.out.println("firestoreOptions on line 34 of the Car" + firestoreOptions);
         //set the db to the instance from the previous line
         db = firestoreOptions.getService();

@@ -3,20 +3,14 @@
  */
 package BadDriving;
 
-import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
-
 public class App{
 
     public static void main(String[] args) throws InterruptedException {
-        final GpioController gpio = GpioFactory.getInstance();
-
-
 
                Car r = new Car();
                r.getDB();
 
-        Steering hotRod = new Steering();
+       // Steering hotRod = new Steering();
 
     }
 
