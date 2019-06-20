@@ -42,16 +42,29 @@ public class SteeringTest {
 
         car.steeringButtonDepressed(left);
 
-        Assert.assertEquals("Pin 1 is not being set to low on left", "low", wheel1.getState());
-        Assert.assertEquals("Pin 2 is not being set to low on left", "low", wheel2.getState());
-        Assert.assertEquals("Pin 3 is not being set to high on left", "high", wheel3.getState());
-        Assert.assertEquals("Pin 4 is not being set to high on left", "high", wheel4.getState());
+        Assert.assertEquals("Pin 1 is not being set to low on left", "low", car.wheel1.getState());
+        Assert.assertEquals("Pin 2 is not being set to low on left", "low", car.wheel2.getState());
+        Assert.assertEquals("Pin 3 is not being set to high on left", "high", car.wheel3.getState());
+        Assert.assertEquals("Pin 4 is not being set to high on left", "high", car.wheel4.getState());
     }
+
     public void steeringButtonDepressedTestRight(){
-        //TODO: THIS
+
+        car.steeringButtonDepressed(right);
+
+        Assert.assertEquals("Pin 1 is not being set to high on right", "high", car.wheel1.getState());
+        Assert.assertEquals("Pin 2 is not being set to high on right", "high", car.wheel2.getState());
+        Assert.assertEquals("Pin 3 is not being set to low on right", "low", car.wheel3.getState());
+        Assert.assertEquals("Pin 4 is not being set to low on right", "low", car.wheel4.getState());
     }
+    
     public void steeringButtonDepressedTestDefault(){
-        //TODO: THIS
+        car.steeringButtonDepressed("default");
+
+        Assert.assertEquals("Pin 1 is not being set to low on stop", "low", car.wheel1.getState());
+        Assert.assertEquals("Pin 2 is not being set to low on stop", "low", car.wheel2.getState());
+        Assert.assertEquals("Pin 3 is not being set to low on stop", "low", car.wheel3.getState());
+        Assert.assertEquals("Pin 4 is not being set to low on stop", "low", car.wheel4.getState());
     }
 
 
