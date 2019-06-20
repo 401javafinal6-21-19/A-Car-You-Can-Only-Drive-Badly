@@ -55,7 +55,7 @@ public class Car {
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirestoreException error) {
                 //...set the json object direction to a string and assign it to the direction variable in this app
                 direction = value.get("direction").toString();
-                System.out.println("Value in Car at 45" + value.get("direction"));
+                System.out.println("Value in Car at 45 " + value.get("direction"));
 
 
 
