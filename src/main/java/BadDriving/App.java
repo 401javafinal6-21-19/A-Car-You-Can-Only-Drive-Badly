@@ -25,9 +25,10 @@ public class App {
         }
 
         final GpioController gpio = GpioFactory.getInstance();
-        Steering hotRod = new Steering();
 
-
+        while(true){
+            Thread.sleep(100);
+        }
     }
 
 }

@@ -73,11 +73,15 @@ public class Steering {
 
 
     public void forward(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)  {
-
         highWrap(wheel1);
+        toggleWrap(wheel1);
         highWrap(wheel2);
+        toggleWrap(wheel2);
         highWrap(wheel3);
+        toggleWrap(wheel3);
         highWrap(wheel4);
+        toggleWrap(wheel4);
+
     }
 
     public void forward(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4)  {
@@ -91,13 +95,9 @@ public class Steering {
     public void stop(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)  {
 
         highWrap(wheel1);
-        toggleWrap(wheel1);
         highWrap(wheel2);
-        toggleWrap(wheel2);
         highWrap(wheel3);
-        toggleWrap(wheel3);
         highWrap(wheel4);
-        toggleWrap(wheel4);
     }
 
     public void stop(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4)  {
