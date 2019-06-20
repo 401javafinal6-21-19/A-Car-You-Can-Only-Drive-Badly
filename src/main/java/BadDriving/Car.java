@@ -1,8 +1,11 @@
 package BadDriving;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.*;
 
 import javax.annotation.Nullable;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 
 public class Car {
@@ -22,9 +25,20 @@ public class Car {
      * the method on Receiver which connects with firebase, accesses the firestore database and finds the correct Project, locates the necessary collection and document, and listens on that document for changes.
      * When changes are heard, it gets the new value of direction off the document car in firebase, and sets that to the String direction in this app.
      */
-    public void getDB() {
+    public void getDB() throws IOException {
         //get instance of firebase firestore database from the project a-car-you-can-only-drive-badly
-        FirestoreOptions firestoreOptions = FirestoreOptions.getDefaultInstance().toBuilder().setProjectId("a-car-you-can-only-drive-badly").build();
+        String credentialsUrl = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
+
+        FileInputStream serviceAccount = new FileInputStream(credentialsUrl);
+
+
+
+        FirestoreOptions firestoreOptions = FirestoreOptions
+                                                .getDefaultInstance()
+                                                .toBuilder()
+                                                .setProjectId("a-car-you-can-only-drive-badly")
+                                                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                                                .build();
         System.out.println("firestoreOptions on line 34 of the Car" + firestoreOptions);
         //set the db to the instance from the previous line
         db = firestoreOptions.getService();
