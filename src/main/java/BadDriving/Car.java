@@ -27,6 +27,7 @@ public class Car {
      */
     public void getDB() throws IOException {
         //get instance of firebase firestore database from the project a-car-you-can-only-drive-badly
+
         String credentialsUrl = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
 
         FileInputStream serviceAccount = new FileInputStream(credentialsUrl);
@@ -39,6 +40,7 @@ public class Car {
                                                 .setProjectId("a-car-you-can-only-drive-badly")
                                                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                                                 .build();
+
         System.out.println("firestoreOptions on line 34 of the Car" + firestoreOptions);
         //set the db to the instance from the previous line
         db = firestoreOptions.getService();
@@ -55,7 +57,7 @@ public class Car {
                 Steering steering = new Steering();
 
                 steering.steeringButtonDepressed(direction);
-                steering.steeringButtonReleased(direction);
+
 
             }
         });

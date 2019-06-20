@@ -33,47 +33,37 @@ public class Steering {
         Car r = new Car();
         switch (direction) {
             case "forward":
-                try {
-                   forward();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
+                   forward(wheelOne, wheelTwo, wheelThree, wheelFour);
+
                 System.out.println("direction in case forward " + r.direction);
                 break;
 
             case "stop":
-                try {
-                    stop();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
+                    stop(wheelOne, wheelTwo, wheelThree, wheelFour);
+
                 System.out.println("direction in case stop " + r.direction);
                 break;
 
             case "left":
-                try {
-                    left();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
+                    left(wheelOne, wheelTwo, wheelThree, wheelFour);
+
                 System.out.println("direction in case left " + r.direction);
                 break;
 
             case "right":
-                try {
-                  right();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
+                  right(wheelOne, wheelTwo, wheelThree, wheelFour);
+
                 System.out.println("direction in case right " + r.direction);
                 break;
 
             default:
-                try {
-                   stop();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
+                   stop(wheelOne, wheelTwo, wheelThree, wheelFour);
+
                 System.out.println("direction in case stop " + r.direction);
                 break;
 
@@ -81,110 +71,112 @@ public class Steering {
 
     }
 
-    public void steeringButtonReleased(String direction){
-        Car r = new Car();
-        switch (direction){
-            case "forward release":
-                try {
-                  forwardRelease();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                break;
 
-            case "left release":
-                try {
-                   leftRelease();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                break;
+    public void forward(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)  {
 
-            case "right release":
-                try {
-                    rightRelease();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                break;
-
-            default:
-                try {
-                    stop();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                break;
-        }
+        highWrap(wheel1);
+        highWrap(wheel2);
+        highWrap(wheel3);
+        highWrap(wheel4);
     }
 
+    public void forward(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4)  {
 
-    public void forward() throws InterruptedException {
-
-        wheelOne.high();
-        wheelTwo.high();
-        wheelThree.high();
-        wheelFour.high();
+        highWrap(wheel1);
+        highWrap(wheel2);
+        highWrap(wheel3);
+        highWrap(wheel4);
     }
 
-    public void stop() throws InterruptedException {
+    public void stop(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)  {
 
-        wheelOne.high();
-        wheelOne.toggle();
-        wheelTwo.high();
-        wheelTwo.toggle();
-        wheelThree.high();
-        wheelThree.toggle();
-        wheelFour.high();
-        wheelFour.toggle();
+        highWrap(wheel1);
+        toggleWrap(wheel1);
+        highWrap(wheel2);
+        toggleWrap(wheel2);
+        highWrap(wheel3);
+        toggleWrap(wheel3);
+        highWrap(wheel4);
+        toggleWrap(wheel4);
     }
 
-    public void left() throws InterruptedException {
+    public void stop(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4)  {
 
-        wheelOne.high();
-        wheelOne.toggle();
-        wheelTwo.high();
-        wheelTwo.toggle();
-        wheelThree.high();
-        wheelFour.high();
+        highWrap(wheel1);
+        toggleWrap(wheel1);
+        highWrap(wheel2);
+        toggleWrap(wheel2);
+        highWrap(wheel3);
+        toggleWrap(wheel3);
+        highWrap(wheel4);
+        toggleWrap(wheel4);
     }
 
-    public void right() throws InterruptedException {
+    public void left(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4) {
 
-        wheelOne.high();
-        wheelTwo.high();
-        wheelThree.high();
-        wheelThree.toggle();
-        wheelFour.high();
-        wheelFour.toggle();
+        highWrap(wheel1);
+        toggleWrap(wheel1);
+        highWrap(wheel2);
+        toggleWrap(wheel2);
+        highWrap(wheel3);
+        highWrap(wheel4);
     }
-//  Everything above this line is within steeringButtonDepressed
+    public void left(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4) {
 
-//  Everything below this line is within steeringButtonReleased
+        highWrap(wheel1);
+        toggleWrap(wheel1);
+        highWrap(wheel2);
+        toggleWrap(wheel2);
+        highWrap(wheel3);
+        highWrap(wheel4);
+    }
+    public void right(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4) {
 
-    public void forwardRelease() throws InterruptedException {
-
-        wheelOne.low();
-        wheelTwo.low();
-        wheelThree.low();
-        wheelFour.low();
+        highWrap(wheel1);
+        highWrap(wheel2);
+        highWrap(wheel3);
+        toggleWrap(wheel3);
+        highWrap(wheel4);
+        toggleWrap(wheel4);
     }
 
-    public void rightRelease() throws InterruptedException {
+    public void right(GpioTest wheel1, GpioTest wheel2, GpioTest wheel3, GpioTest wheel4) {
 
-        wheelOne.low();
-        wheelTwo.low();
-        wheelThree.low();
-        wheelFour.low();
+        highWrap(wheel1);
+        highWrap(wheel2);
+        highWrap(wheel3);
+        toggleWrap(wheel3);
+        highWrap(wheel4);
+        toggleWrap(wheel4);
+    }
+//Wrappers to abstract the j4pi library for testing and modularity
+
+    public void highWrap(GpioPinDigitalOutput wheel){
+        wheel.high();
     }
 
-    public void leftRelease() throws InterruptedException {
+    public void lowWrap(GpioPinDigitalOutput wheel) {
+        wheel.low();
+    }
 
-        wheelOne.high();
-        wheelOne.toggle();
-        wheelTwo.high();
-        wheelTwo.toggle();
-        wheelThree.high();
-        wheelFour.high();
+    public void toggleWrap(GpioPinDigitalOutput wheel){
+
+
+            wheel.toggle();
+
+    }
+
+//overloaded wrappers for testing
+
+    public void highWrap(GpioTest wheel){
+        wheel.high();
+    }
+
+    public void lowWrap(GpioTest wheel){
+        wheel.low();
+    }
+
+    public void toggleWrap(GpioTest wheel){
+        wheel.toggle();
     }
 }
