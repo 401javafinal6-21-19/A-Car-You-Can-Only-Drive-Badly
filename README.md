@@ -30,7 +30,16 @@ https://glitch.com/~drivebadlybot
 
 4. Wire using pie GPIO Pins 26, 27, 28, 29 according to these diagrams: 
 
-![
+![Pie one](https://drive.google.com/open?id=0B6MjkZqKUJnVUURKTWJKN2lDUWx4MzF6eXZ6eWd6cXd0TkVB)
+![Pie two](https://drive.google.com/open?id=0B6MjkZqKUJnVZGV5SVdVWlpJVHEya2JJbHdoWFZGRy1MMi00)
+![Pie three](https://drive.google.com/open?id=0B6MjkZqKUJnVR1hSdFVrNXVCeVV3ejJEVjVqblE2bnVCRUY0)
 
-!
-
+* Install the correct Software on the Pie. 
+  1. Format the SD card and install Raspian according to the directions per [Noobs](https://www.raspberrypi.org/downloads/noobs/) directions. 
+  2. Insert the card in the pie and let it intilize. 
+  3. Install [OpenJDK12](https://openjdk.java.net/projects/jdk/12/) on the pi. 
+  4. Install [J4Pi](https://pi4j.com/1.2/pins/model-2b-rev1.html) on the pi.
+  5. Pull this repository onto the pi. 
+  6. Set up a firebase controller by following the instructions at [this link](https://github.com/401javafinal6-21-19/Car-Driver). 
+  7. Go to the google cloud services page in your project and down load the Json file, save it in the root of this repo on the pi. 
+  8. Run a ./gradlew -build. 
