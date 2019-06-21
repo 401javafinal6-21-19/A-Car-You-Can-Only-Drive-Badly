@@ -30,9 +30,9 @@ https://glitch.com/~drivebadlybot
 
 4. Wire using pie GPIO Pins 26, 27, 28, 29 according to these diagrams: 
 
-![Pie one](https://drive.google.com/open?id=0B6MjkZqKUJnVUURKTWJKN2lDUWx4MzF6eXZ6eWd6cXd0TkVB)
-![Pie two](https://drive.google.com/open?id=0B6MjkZqKUJnVZGV5SVdVWlpJVHEya2JJbHdoWFZGRy1MMi00)
-![Pie three](https://drive.google.com/open?id=0B6MjkZqKUJnVR1hSdFVrNXVCeVV3ejJEVjVqblE2bnVCRUY0)
+[Car one |](https://drive.google.com/open?id=0B6MjkZqKUJnVUURKTWJKN2lDUWx4MzF6eXZ6eWd6cXd0TkVB)
+[Car two |](https://drive.google.com/open?id=0B6MjkZqKUJnVZGV5SVdVWlpJVHEya2JJbHdoWFZGRy1MMi00)
+[Car three](https://drive.google.com/open?id=0B6MjkZqKUJnVR1hSdFVrNXVCeVV3ejJEVjVqblE2bnVCRUY0)
 
 * Install the correct Software on the Pie. 
   1. Format the SD card and install Raspian according to the directions per [Noobs](https://www.raspberrypi.org/downloads/noobs/) directions. 
