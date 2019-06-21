@@ -57,7 +57,7 @@ public class SteeringTest {
         Assert.assertEquals("Pin 3 is not being set to low on right", "low", car.wheel3.getState());
         Assert.assertEquals("Pin 4 is not being set to low on right", "low", car.wheel4.getState());
     }
-    
+
     public void steeringButtonDepressedTestDefault(){
         car.steeringButtonDepressed("default");
 

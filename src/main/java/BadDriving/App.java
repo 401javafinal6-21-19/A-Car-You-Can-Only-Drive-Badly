@@ -11,11 +11,14 @@ import java.io.IOException;
 
 public class App {
 
-    public static void main(String[] args) throws InterruptedException {
-
-
-
-
+    /**
+     *
+     *
+     *
+     * @param args
+     * @throws InterruptedException
+     */
+    public static void main(String[] args) {
 
         Car r = new Car();
         try {
@@ -26,10 +29,17 @@ public class App {
 
         final GpioController gpio = GpioFactory.getInstance();
 
-        while(true){
-            Thread.sleep(100);
-        }
-    }
+        //keeps the App running and awaiting commands
+        while (true) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
 
+                System.out.println(ex + "sleep was interrupted on main");
+                ex.printStackTrace();
+            }
+        }
+
+    }
 }
 
