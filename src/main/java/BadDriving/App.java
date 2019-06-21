@@ -12,11 +12,16 @@ import java.io.IOException;
 public class App {
 
     /**
+     * @param args - standard for a pain function.
+     * @throws InterruptedException - throws if anything interrupts the thread in the while true loop. This thread exists to keep the app open
+     * so that the car can be ready to receive commands.
      *
+     * Car r is a new instance of the car class which connects to the firebase database and recieves commands.
      *
+     *GpioController giop is an instance of a GpioFactory from the J4Pi library which allows the car access and control
+     * over the GPIO pins on the pie.
      *
-     * @param args
-     * @throws InterruptedException
+     * While True loop and Thread.sleep(100) simply exsist to keep the car awake and awaiting commands
      */
     public static void main(String[] args) {
 
@@ -24,6 +29,8 @@ public class App {
         try {
             r.getDB();
         } catch (IOException e) {
+
+            System.out.println(e + " Could not connect to Firebase Database and receive commands on main");
             e.printStackTrace();
         }
 

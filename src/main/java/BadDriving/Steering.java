@@ -10,6 +10,26 @@ public class Steering {
     final  GpioPinDigitalOutput wheelThree;
     final  GpioPinDigitalOutput wheelFour;
 
+    /**
+     * Steering()
+     * This class governs the basic steering operations of the car.
+     *
+     * public void steeringButtonDepressed(String direction)
+     *
+     * public void forward(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)
+     *
+     * public void stop(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)
+     *
+     * public void left(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)
+     *
+     * public void right(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)
+     *
+     * public void highWrap(GpioPinDigitalOutput wheel)
+     *
+     * public void lowWrap(GpioPinDigitalOutput wheel)
+     *
+     * public void toggleWrap(GpioPinDigitalOutput wheel)
+     */
     public Steering() {
 
         try {
