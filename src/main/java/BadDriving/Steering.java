@@ -49,6 +49,16 @@ public class Steering {
         }
     }
 
+    /**
+     *
+     * @param direction - a String, when it is called later this comes from firebase and represents the strinigified JSON object
+     *                  that came back from firebase.
+     *
+     *  This switch case takes in the direction string and when the case matches, it calls one of the direction functions, enumerated below.
+     *
+     *  The default case is stop, as the car needed a safe failure sate.
+     */
+
     public void steeringButtonDepressed(String direction){
         Car r = new Car();
         switch (direction) {
@@ -92,6 +102,16 @@ public class Steering {
     }
 
 
+    /**
+     *
+     * @param wheel1 - GpioPinDigitalOutput 26
+     * @param wheel2 - GpioPinDigitalOutput 27
+     * @param wheel3 - GpioPinDigitalOutput 28
+     * @param wheel4 - GpioPinDigitalOutput 29
+     *
+     * Forward sets the state of the GPIO pins to open using the wrapper functions highWrap and toggleWrap below so that the pins are in the correct state for going forward.
+     */
+
     public void forward(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)  {
         highWrap(wheel1);
         toggleWrap(wheel1);
@@ -104,7 +124,15 @@ public class Steering {
 
     }
 
-
+    /**
+     *
+     * @param wheel1 - GpioPinDigitalOutput 26
+     * @param wheel2 - GpioPinDigitalOutput 27
+     * @param wheel3 - GpioPinDigitalOutput 28
+     * @param wheel4 - GpioPinDigitalOutput 29
+     *
+     * Stop sets the state of the GPIO pins to off using the wrapper functions highWrap below so that the pins are in the correct state for stopping.
+     */
 
     public void stop(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4)  {
 
@@ -114,7 +142,16 @@ public class Steering {
         highWrap(wheel4);
     }
 
-
+    /**
+     *
+     * @param wheel1 - GpioPinDigitalOutput 26
+     * @param wheel2 - GpioPinDigitalOutput 27
+     * @param wheel3 - GpioPinDigitalOutput 28
+     * @param wheel4 - GpioPinDigitalOutput 29
+     *
+     * Left sets the state of the GPIO pins to open using the wrapper functions highWrap and toggleWrap below so that the pins are in the correct state for going left.
+     *
+     */
 
     public void left(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4) {
 
@@ -125,6 +162,17 @@ public class Steering {
         highWrap(wheel3);
         highWrap(wheel4);
     }
+
+    /**
+     *
+     * @param wheel1 - GpioPinDigitalOutput 26
+     * @param wheel2 - GpioPinDigitalOutput 27
+     * @param wheel3 - GpioPinDigitalOutput 28
+     * @param wheel4 - GpioPinDigitalOutput 29
+     *
+     * Right sets the state of the GPIO pins to open using the wrapper functions highWrap and toggleWrap below so that the pins are in the correct state for going right.
+     *
+     */
 
     public void right(GpioPinDigitalOutput wheel1, GpioPinDigitalOutput wheel2, GpioPinDigitalOutput wheel3, GpioPinDigitalOutput wheel4) {
 
@@ -139,13 +187,35 @@ public class Steering {
 
 //Wrappers to abstract the j4pi library for testing and modularity
 
+    /**
+     *
+     * @param wheel - GpioPinDigitalOutput wheel
+     *
+     * this accesses the J4Pi method .high() and sets the given GPIO pin to high.
+     *
+     */
+
     public void highWrap(GpioPinDigitalOutput wheel){
         wheel.high();
     }
 
+    /**
+     *
+     * @param wheel - GpioPinDigitalOutput wheel
+     *
+     * this accesses the J4Pi method .low() and sets the given GPIO pin to low.
+     *
+     */
     public void lowWrap(GpioPinDigitalOutput wheel) {
         wheel.low();
     }
+
+    /**
+     *
+     * @param wheel - GpioPinDigitalOutput wheel
+     *
+     *  this accesses the J4Pi method .toggle() and sets the given GPIO pin to the opposite of what it had previously been.             
+     */
 
     public void toggleWrap(GpioPinDigitalOutput wheel){
 
